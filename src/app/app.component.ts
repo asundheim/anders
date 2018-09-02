@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IModule } from '../interfaces/IModule';
 import { IModuleRow } from '../interfaces/IModuleRow';
+import { LabelColor } from '../enums/label-colors';
+import { ILabel } from '../interfaces/ILabel';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,17 @@ export class AppComponent {
   modules = [
     {
       module1: {
-        name: 'test1'
+        name: 'test1',
+        labels: [
+          {
+            name: 'JS',
+            color: LabelColor.orange
+          } as ILabel,
+          {
+            name: 'HTML',
+            color: LabelColor.blue
+          }
+        ]
       } as IModule,
       module2: {
         name: 'test2'

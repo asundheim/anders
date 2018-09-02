@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
-import { AndersContainer } from './anders-container/anders-container.component';
-import { LabelContainer } from './label-container/label-container.component';
+import { AndersContainerComponent } from './anders-container/anders-container.component';
+import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AndersContainer,
-    LabelContainer
+    AndersContainerComponent,
+    LabelContainerComponent
   ],
   imports: [
     BrowserModule,

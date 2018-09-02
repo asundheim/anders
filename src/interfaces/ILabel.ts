@@ -1,3 +1,4 @@
 export interface ILabel {
-    label: string;
+    name: string;
+    color: string;
 }

@@ -1,12 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { ILabel } from '../../interfaces/ILabel';
+import { LabelColor } from '../../enums/label-colors';
+import { IModule } from '../../interfaces/IModule';
 
 @Component({
-  selector: 'anders-container',
+  selector: 'app-anders-container',
   templateUrl: './anders-container.component.html',
   styleUrls: ['./anders-container.component.scss']
 })
 
 
-export class AndersContainer {
-    @Input() name: string;
+export class AndersContainerComponent {
+  @Input() module: IModule;
 }
