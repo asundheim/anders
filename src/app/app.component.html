@@ -1,2 +1,17 @@
+<p-table [value]="modules">
+    <ng-template pTemplate="body" let-modules>
+        <tr>
+            <td>
+                <anders-container [name]="modules.module1.name">
 
+                </anders-container>
+            </td>
+            <td>
+                <anders-container [name]="modules.module2.name">
+
+                </anders-container>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
 
