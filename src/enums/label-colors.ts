@@ -1,4 +1,7 @@
 export enum LabelColor {
-    orange = '#f0ad4e',
-    blue = '#337ab7'
+    Orange = '#f0ad4e',
+    Blue = '#337ab7',
+    Red = '#d9534f',
+    Green = '#5cb85c',
+    LightBlue = '#5bc0de'
 }

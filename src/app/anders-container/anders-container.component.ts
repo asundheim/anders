@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ILabel } from '../../interfaces/ILabel';
-import { LabelColor } from '../../enums/label-colors';
 import { IModule } from '../../interfaces/IModule';
 
 @Component({

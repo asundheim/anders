@@ -1,5 +1,17 @@
-<p-card [title]="module.name" [style]="{width: '400px'}">
+<p-card [title] = "module.name" [style] = "{width: '400px'}">
+    <div *ngIf = "module.images && module.images.length > 1">
+        <p-galleria [images] = "module.images"
+        [showCaption] = "false"
+        [autoPlay] = "false"
+        [showFilmstrip] = "false"
+        [panelWidth] = "300"
+        [panelHeight] = "module.imageHeight">
+        </p-galleria>
+    </div>
+    <div *ngIf = "module.image">
+        <img [src] = "module.image">
+    </div>
     <p-footer>
-        <app-label-container [labels]="module.labels"></app-label-container>
+        <app-label-container [labels] = "module.labels"></app-label-container>
     </p-footer>
 </p-card>

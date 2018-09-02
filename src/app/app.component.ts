@@ -14,28 +14,85 @@ export class AppComponent {
   modules = [
     {
       module1: {
-        name: 'test1',
+        name: 'Dungeon Boxes',
         labels: [
           {
             name: 'JS',
-            color: LabelColor.orange
+            color: LabelColor.Orange
           } as ILabel,
           {
             name: 'HTML',
-            color: LabelColor.blue
-          }
+            color: LabelColor.Blue
+          },
+          {
+            name: 'CSS',
+            color: LabelColor.LightBlue
+          } as ILabel
         ]
       } as IModule,
       module2: {
-        name: 'test2'
+        name: 'Lounge for CS:GO',
+        image: 'assets/lounge_1.png',
+        labels: [
+          {
+            name: 'Java',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'JS',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'Android',
+            color: LabelColor.Green
+          } as ILabel
+        ]
       } as IModule
     },
     {
       module1: {
-        name: 'test3'
+        name: 'Binary Trees',
+        labels: [
+          {
+            name: 'JS',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'HTML',
+            color: LabelColor.Blue
+          },
+          {
+            name: 'CSS',
+            color: LabelColor.LightBlue
+          } as ILabel
+        ] as ILabel[]
       } as IModule,
       module2: {
-        name: 'test4'
+        name: 'Place 3D',
+        images: [
+          {source: 'assets/place_1.png'},
+          {source: 'assets/place_2.png'},
+          {source: 'assets/place_3.png'}
+        ],
+        imageHeight: 180,
+        labels: [
+          {
+            name: 'JS',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'OpenGL',
+            color: LabelColor.Blue
+          },
+          {
+            name: 'Python',
+            color: LabelColor.Green
+          },
+          {
+            name: 'Three.JS',
+            color: LabelColor.Red
+          }
+        ]
       } as IModule
     }
   ] as IModuleRow[];
