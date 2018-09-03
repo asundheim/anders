@@ -8,6 +8,7 @@ import { AndersContainerComponent } from './anders-container/anders-container.co
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-
     BrowserModule,
     TableModule,
     CardModule,
-    GalleriaModule
+    GalleriaModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

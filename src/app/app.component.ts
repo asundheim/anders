@@ -162,7 +162,7 @@ export class AppComponent implements OnInit {
   points = [];
   @ViewChild('connectyLines') canvasRef: ElementRef;
   @ViewChild('tab') tableRef: ElementRef;
-  @HostListener('document:mousemove', ['$event']);
+  @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
     ctx.strokeStyle = 'rgba(163, 163, 163, 0.3)';
