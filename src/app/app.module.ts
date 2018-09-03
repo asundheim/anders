@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { AndersContainerComponent } from './anders-container/anders-container.component';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
+import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AndersContainerComponent,
     LabelContainerComponent,
-    TreeComponent
+    TreeComponent,
+    DungeonBoxesComponent
   ],
   imports: [
     BrowserModule,

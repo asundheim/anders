@@ -1,4 +1,31 @@
-<p-table [value] = "modules">
+<canvas (click) = "drawNew()"
+        [width]="getWidth()"
+        height = "1520"
+        #connectyLines
+        class = "background-canvas">
+</canvas>
+<div>
+    <div>
+        <div class="header" style="text-align: center">
+            Anders Sundheim
+        </div>
+        <svg width="100%" height="50px" viewBox="0 0 200 10">
+            <line x1="0" y1="5" x2="200" y2="5" style="stroke: rgb(155, 144, 144);stroke-width:2;"></line>
+            <polygon points="68,5 71,8 74,5 71, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
+            <polygon points="126,5 129,8 132,5 129, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
+        </svg>
+    
+    <div class="header-sub" style = "text-align:center;">
+        <a href="about.html" style="padding-right:1%">
+            About
+        </a>
+        <a href="demos.html" style = "padding-left:1%">
+            Demos
+        </a>
+    </div>
+</div>
+</div>
+<p-table [value] = "modules" #tab>
     <ng-template pTemplate = "body" let-modules>
         <tr>
             <td>
@@ -14,4 +41,5 @@
         </tr>
     </ng-template>
 </p-table>
+
 

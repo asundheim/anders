@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { IModule } from '../interfaces/IModule';
 import { IModuleRow } from '../interfaces/IModuleRow';
 import { LabelColor } from '../enums/label-colors';
@@ -10,7 +10,7 @@ import { ILabel } from '../interfaces/ILabel';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   modules = [
     {
       module1: {
@@ -28,7 +28,8 @@ export class AppComponent {
             name: 'CSS',
             color: LabelColor.LightBlue
           } as ILabel
-        ]
+        ],
+        dungeonBoxes: true
       } as IModule,
       module2: {
         name: 'Lounge for CS:GO',
@@ -48,7 +49,7 @@ export class AppComponent {
           } as ILabel
         ]
       } as IModule
-    },
+    } as IModuleRow,
     {
       module1: {
         name: 'Binary Trees',
@@ -95,6 +96,139 @@ export class AppComponent {
           }
         ]
       } as IModule
-    }
+    } as IModuleRow,
+    {
+      module1: {
+        name: 'Ingress_Java',
+        labels: [
+          {
+            name: 'Java',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'Swing',
+            color: LabelColor.Orange
+          }
+        ] as ILabel[],
+        image: 'assets/ingress_1.png'
+      } as IModule,
+      module2: {
+        name: 'Hue Go Switch',
+        image: 'assets/go_switch_1.png',
+        labels: [
+          {
+            name: 'Node.JS',
+            color: LabelColor.Red
+          } as ILabel
+        ]
+      } as IModule
+    } as IModuleRow,
+    {
+      module1: {
+        name: 'Vector Terrain',
+        images: [
+          {source: 'assets/vector_1.png'},
+          {source: 'assets/vector_2.png'},
+          {source: 'assets/vector_3.png'}
+        ],
+        imageHeight: 270,
+        labels: [
+          {
+            name: 'Java',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'OpenGL',
+            color: LabelColor.Blue
+          }
+        ] as ILabel[]
+      } as IModule,
+      module2: {
+        name: 'Lua MST',
+        images: [
+          {source: 'assets/mst_1.png'},
+          {source: 'assets/mst_2.png'}
+        ],
+        imageHeight: 265,
+        labels: [
+          {
+            name: 'Lua',
+            color: LabelColor.Blue
+          } as ILabel
+        ]
+      } as IModule
+    } as IModuleRow
   ] as IModuleRow[];
+  points = [];
+  @ViewChild('connectyLines') canvasRef: ElementRef;
+  @ViewChild('tab') tableRef: ElementRef;
+  @HostListener('document:mousemove', ['$event']) 
+  onMouseMove(e: any) {
+    console.log(e);
+    const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
+    this.points[Math.floor(e.clientY / 15)][Math.floor(e.clientX / 15)].forEach((p) => {
+      ctx.beginPath();
+      ctx.moveTo(e.clientX, e.clientY);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+    });
+  }
+  ngOnInit() {
+    
+  }
+  
+  drawNew() {
+    const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
+    this.generatePoints();
+    console.log(this.points);
+    this.points.forEach((t) => {
+      t.forEach((p) => {
+        p.forEach((s) => {
+          console.log(s);
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, 1, 0, Math.PI * 2);
+          ctx.fill();
+        })
+      })
+    });
+    for (let i = 0; i < this.getWidth(); i += this.getWidth() / 15) {
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, this.getHeight());
+      ctx.stroke();
+      for (let j = 0; j < this.getHeight(); j += this.getHeight() / 15) {
+        ctx.moveTo(0, j);
+        ctx.lineTo(this.getWidth(), j);
+      }
+    }
+  }
+  getWidth() {
+    return window.innerWidth;
+  }
+
+  getHeight() {
+    return window.innerHeight;
+  }
+
+  getRandom(min: number, max: number): number {
+    return Math.random() * (max - min) + min;
+  }
+
+  generatePoints() {
+    for (let i = 0; i < this.getWidth(); i += this.getWidth() / 15) {
+      const tempCol = [];
+      for (let j = 0; j < this.getHeight(); j += this.getHeight() / 15) {
+        const tempRow = [];
+        for (let k = 0; k < 2; k++) {
+          for (let l = 0; l < 2; l++) {
+            tempRow.push({
+              x: this.getRandom(i, i + this.getWidth() / 15),
+              y: this.getRandom(j, j + this.getHeight() / 15)
+            });
+          }
+        }
+        tempCol.push(tempRow);
+      }
+      this.points.push(tempCol);
+    }
+  }
 }

@@ -9,4 +9,5 @@ export interface IModule {
     images?: any[];
     image: string;
     tree?: boolean;
+    dungeonBoxes?: boolean;
 }

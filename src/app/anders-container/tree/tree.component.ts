@@ -16,7 +16,7 @@ export class TreeComponent implements OnInit {
   tempLines = [];
   l = 40;
   leafDepth = 2;
-  treeColor = '#f5f5f5';
+  treeColor = '#ffffff';
   leafColor = '#3c763d';
   branchColor = '#000000';
 
