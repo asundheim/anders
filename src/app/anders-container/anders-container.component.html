@@ -1,4 +1,7 @@
-<p-card [title] = "module.name" [style] = "{width: '400px'}">
+<p-card [title]="module.name" [style] = "{width: '400px'}">
+    <p-header class = "card-header">
+        <fa name="info-circle" size="lg" (click)="goToInfo(module.repoLink)"></fa>
+    </p-header>
     <div *ngIf = "module.images && module.images.length > 1">
         <p-galleria [images] = "module.images"
         [showCaption] = "false"
@@ -17,7 +20,11 @@
     <div *ngIf = "module.dungeonBoxes">
         <app-dungeon-boxes #dungeonBoxes (click)="newBoxes()"></app-dungeon-boxes>
     </div>
+    
     <p-footer>
         <app-label-container [labels] = "module.labels"></app-label-container>
+        <div *ngIf = "module.interact" class = "interact">
+            <fa name="desktop" size = "lg" (click)="goToInfo(module.interact)"></fa>
+        </div>
     </p-footer>
 </p-card>

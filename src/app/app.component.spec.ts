@@ -5,7 +5,6 @@ import { TableModule } from 'primeng/table';
 import { CardModule, GalleriaModule } from 'primeng/primeng';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,8 +18,7 @@ describe('AppComponent', () => {
       imports: [
         TableModule,
         CardModule,
-        GalleriaModule,
-        FontAwesomeModule
+        GalleriaModule
       ]
     }).compileComponents();
   }));

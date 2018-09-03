@@ -10,4 +10,6 @@ export interface IModule {
     image: string;
     tree?: boolean;
     dungeonBoxes?: boolean;
+    repoLink: string;
+    interact?: string;
 }

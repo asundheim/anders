@@ -1,3 +1,12 @@
-app-tree, app-dungeon-boxes {
+app-tree, app-dungeon-boxes, fa {
     cursor: pointer;
+}
+.card-header {
+    float: right;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+.interact {
+    display: inline-block;
+    margin: 1em;
 }

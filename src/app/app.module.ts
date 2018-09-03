@@ -8,7 +8,9 @@ import { AndersContainerComponent } from './anders-container/anders-container.co
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SeperatorComponent } from './seperator/seperator.component';
+import { LinesComponent } from './lines/lines.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AndersContainerComponent,
     LabelContainerComponent,
     TreeComponent,
-    DungeonBoxesComponent
+    DungeonBoxesComponent,
+    SeperatorComponent,
+    LinesComponent
   ],
   imports: [
     BrowserModule,
     TableModule,
     CardModule,
     GalleriaModule,
-    FontAwesomeModule
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

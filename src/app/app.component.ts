@@ -3,6 +3,7 @@ import { IModule } from '../interfaces/IModule';
 import { IModuleRow } from '../interfaces/IModuleRow';
 import { LabelColor } from '../enums/label-colors';
 import { ILabel } from '../interfaces/ILabel';
+import { LinesComponent } from './lines/lines.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,9 @@ export class AppComponent implements OnInit {
             color: LabelColor.LightBlue
           } as ILabel
         ],
-        dungeonBoxes: true
+        dungeonBoxes: true,
+        repoLink: 'https://github.com/AndersSundheim/DungeonBoxes',
+        interact: 'https://darthevandar.github.io/DungeonBoxes/'
       } as IModule,
       module2: {
         name: 'Lounge for CS:GO',
@@ -47,7 +50,8 @@ export class AppComponent implements OnInit {
             name: 'Android',
             color: LabelColor.Green
           } as ILabel
-        ]
+        ],
+        repoLink: 'https://github.com/DarthEvandar/LoungeforCSGO'
       } as IModule
     } as IModuleRow,
     {
@@ -67,7 +71,9 @@ export class AppComponent implements OnInit {
             color: LabelColor.LightBlue
           } as ILabel
         ] as ILabel[],
-        tree: true
+        tree: true,
+        repoLink: 'https://github.com/DarthEvandar/2dtree',
+        interact: 'http://darthevandar.github.io/2dtree'
       } as IModule,
       module2: {
         name: 'Place 3D',
@@ -94,7 +100,9 @@ export class AppComponent implements OnInit {
             name: 'Three.JS',
             color: LabelColor.Red
           }
-        ]
+        ],
+        repoLink: 'https://github.com/Darthevandar/place3D',
+        interact: 'https://darthevandar.github.io/Place3D/'
       } as IModule
     } as IModuleRow,
     {
@@ -110,7 +118,8 @@ export class AppComponent implements OnInit {
             color: LabelColor.Orange
           }
         ] as ILabel[],
-        image: 'assets/ingress_1.png'
+        image: 'assets/ingress_1.png',
+        repoLink: 'https://github.com/DarthEvandar/Ingress_Dev'
       } as IModule,
       module2: {
         name: 'Hue Go Switch',
@@ -120,7 +129,8 @@ export class AppComponent implements OnInit {
             name: 'Node.JS',
             color: LabelColor.Red
           } as ILabel
-        ]
+        ],
+        repoLink: 'https://github.com/DarthEvandar/go-switch'
       } as IModule
     } as IModuleRow,
     {
@@ -141,7 +151,8 @@ export class AppComponent implements OnInit {
             name: 'OpenGL',
             color: LabelColor.Blue
           }
-        ] as ILabel[]
+        ] as ILabel[],
+        repoLink: 'https://github.com/DarthEvandar/VectorTerrain'
       } as IModule,
       module2: {
         name: 'Lua MST',
@@ -155,59 +166,15 @@ export class AppComponent implements OnInit {
             name: 'Lua',
             color: LabelColor.Blue
           } as ILabel
-        ]
+        ],
+        repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree'
       } as IModule
     } as IModuleRow
   ] as IModuleRow[];
-  points = [];
-  @ViewChild('connectyLines') canvasRef: ElementRef;
-  @ViewChild('tab') tableRef: ElementRef;
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(e: any) {
-    const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
-    ctx.strokeStyle = 'rgba(163, 163, 163, 0.3)';
-    ctx.clearRect(0, 0, this.getWidth(), this.getHeight());
-    this.points[Math.floor((e.clientX / this.getWidth()) * 15)][Math.floor(e.clientY / (this.getHeight()) * 15)]
-    .forEach((p) => {
-      ctx.beginPath();
-      ctx.moveTo(e.clientX, e.clientY);
-      ctx.lineTo(p.x, p.y);
-      ctx.stroke();
-    });
-  }
+
+  @ViewChild('lines') linesRef: LinesComponent;
 
   ngOnInit() {
-    this.generatePoints();
-  }
-
-  getWidth() {
-    return window.innerWidth;
-  }
-
-  getHeight() {
-    return window.innerHeight;
-  }
-
-  getRandom(min: number, max: number): number {
-    return Math.random() * (max - min) + min;
-  }
-
-  generatePoints() {
-    for (let i = 0; i < this.getWidth(); i += this.getWidth() / 15) {
-      const tempCol = [];
-      for (let j = 0; j < this.getHeight(); j += this.getHeight() / 15) {
-        const tempRow = [];
-        for (let k = 0; k < 3; k++) {
-          for (let l = 0; l < 2; l++) {
-            tempRow.push({
-              x: this.getRandom(i, i + this.getWidth() / 15),
-              y: this.getRandom(j, j + this.getHeight() / 15)
-            });
-          }
-        }
-        tempCol.push(tempRow);
-      }
-      this.points.push(tempCol);
-    }
+    this.linesRef.generatePoints();
   }
 }

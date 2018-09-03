@@ -1,18 +1,9 @@
-<canvas (click) = "drawNew()"
-        [width]="getWidth()"
-        height = "1520"
-        #connectyLines
-        class = "background-canvas">
-</canvas>
+<app-lines #lines></app-lines>
 <div class = "header">
     <div class = "header-name">
         Anders Sundheim
     </div>
-    <svg width="100%" height="50px" viewBox="0 0 200 10">
-        <line x1="0" y1="5" x2="200" y2="5" style="stroke: rgb(155, 144, 144);stroke-width:2;"></line>
-        <polygon points="68,5 71,8 74,5 71, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
-        <polygon points="126,5 129,8 132,5 129, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
-    </svg>
+    <app-seperator></app-seperator>
     <div class="header-sub">
         <a href="about.html" style="padding-right:1%">
             About
@@ -38,9 +29,5 @@
         </tr>
     </ng-template>
 </p-table>
-<svg width="100%" height="50px" viewBox="0 0 200 10">
-    <line x1="0" y1="5" x2="200" y2="5" style="stroke: rgb(155, 144, 144);stroke-width:2;"></line>
-    <polygon points="68,5 71,8 74,5 71, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
-    <polygon points="126,5 129,8 132,5 129, 2" style = "stroke:rgb(155,144,144);stroke-width:2"></polygon>
-</svg>
+<app-seperator></app-seperator>
 
