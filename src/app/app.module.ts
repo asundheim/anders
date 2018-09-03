@@ -9,11 +9,11 @@ import { LabelContainerComponent } from './anders-container/label-container/labe
 import { TreeComponent } from './anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
 import { SeperatorComponent } from './seperator/seperator.component';
-import { LinesComponent } from './lines/lines.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ConstellationsComponent } from './constellations/constellations.component';
 
 const appRoutes: Routes = [
   {
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     TreeComponent,
     DungeonBoxesComponent,
     SeperatorComponent,
-    LinesComponent,
+    ConstellationsComponent,
     AboutComponent,
     ProjectsComponent
   ],

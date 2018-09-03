@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { LinesComponent } from './lines/lines.component';
+import { ConstellationsComponent } from './constellations/constellations.component';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import { LinesComponent } from './lines/lines.component';
 
 export class AppComponent implements OnInit {
 
-  @ViewChild('lines') linesRef: LinesComponent;
+  @ViewChild('constellations') constellationsRef: ConstellationsComponent;
 
   ngOnInit() {
-    this.linesRef.generatePoints();
+    this.constellationsRef.generatePoints();
   }
 }

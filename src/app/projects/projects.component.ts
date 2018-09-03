@@ -116,19 +116,16 @@ export class ProjectsComponent implements OnInit {
         repoLink: 'https://github.com/DarthEvandar/darthevandar.github.io'
       },
       module2: {
-        name: 'Ingress_Java',
+        name: 'Perlin Circles',
         labels: [
           {
-            name: 'Java',
-            color: LabelColor.Orange
-          } as ILabel,
-          {
-            name: 'Swing',
+            name: 'Javascript',
             color: LabelColor.Orange
           }
-        ] as ILabel[],
-        image: 'assets/ingress_1.png',
-        repoLink: 'https://github.com/DarthEvandar/Ingress_Dev'
+        ],
+        image: 'assets/perlin_1.png',
+        repoLink: 'https://github.com/DarthEvandar/PerlinCircles',
+        interact: 'https://darthevandar.github.io/PerlinCircles/'
       } as IModule
     },
     {
@@ -179,6 +176,21 @@ export class ProjectsComponent implements OnInit {
           } as ILabel
         ],
         repoLink: 'https://github.com/DarthEvandar/go-switch'
+      } as IModule,
+      module2: {
+        name: 'Ingress_Java',
+        labels: [
+          {
+            name: 'Java',
+            color: LabelColor.Orange
+          } as ILabel,
+          {
+            name: 'Swing',
+            color: LabelColor.Orange
+          }
+        ] as ILabel[],
+        image: 'assets/ingress_1.png',
+        repoLink: 'https://github.com/DarthEvandar/Ingress_Dev'
       } as IModule
     } as IModuleRow
   ] as IModuleRow[];

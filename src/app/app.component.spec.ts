@@ -6,13 +6,13 @@ import { CardModule, GalleriaModule } from 'primeng/primeng';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
 import { AngularFontAwesomeComponent } from 'angular-font-awesome';
-import { LinesComponent } from './lines/lines.component';
 import { SeperatorComponent } from './seperator/seperator.component';
-import { RouterModule, Router, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { ConstellationsComponent } from './constellations/constellations.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -39,7 +39,7 @@ describe('AppComponent', () => {
         LabelContainerComponent,
         TreeComponent,
         AngularFontAwesomeComponent,
-        LinesComponent,
+        ConstellationsComponent,
         SeperatorComponent,
         DungeonBoxesComponent,
         AboutComponent,

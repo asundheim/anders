@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-lines',
-  templateUrl: './lines.component.html',
-  styleUrls: ['./lines.component.scss']
+  selector: 'app-constellations',
+  templateUrl: './constellations.component.html',
+  styleUrls: ['./constellations.component.scss']
 })
-export class LinesComponent implements OnInit {
+export class ConstellationsComponent implements OnInit {
   points = [];
 
   @ViewChild('connectyLines') canvasRef: ElementRef;
