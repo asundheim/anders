@@ -11,6 +11,9 @@
     <div *ngIf = "module.image">
         <img [src] = "module.image">
     </div>
+    <div *ngIf = "module.tree">
+        <app-tree #tree (click)="newTree()"></app-tree>
+    </div>
     <p-footer>
         <app-label-container [labels] = "module.labels"></app-label-container>
     </p-footer>

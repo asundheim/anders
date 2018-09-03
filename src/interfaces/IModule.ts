@@ -8,4 +8,5 @@ export interface IModule {
     buttons?: IButton[];
     images?: any[];
     image: string;
+    tree?: boolean;
 }

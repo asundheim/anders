@@ -6,12 +6,14 @@ import { GalleriaModule } from 'primeng/galleria';
 import { AppComponent } from './app.component';
 import { AndersContainerComponent } from './anders-container/anders-container.component';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
+import { TreeComponent } from './anders-container/tree/tree.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AndersContainerComponent,
-    LabelContainerComponent
+    LabelContainerComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,

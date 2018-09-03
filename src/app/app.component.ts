@@ -65,7 +65,8 @@ export class AppComponent {
             name: 'CSS',
             color: LabelColor.LightBlue
           } as ILabel
-        ] as ILabel[]
+        ] as ILabel[],
+        tree: true
       } as IModule,
       module2: {
         name: 'Place 3D',

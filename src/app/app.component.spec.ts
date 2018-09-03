@@ -4,6 +4,7 @@ import { AndersContainerComponent } from './anders-container/anders-container.co
 import { TableModule } from 'primeng/table';
 import { CardModule, GalleriaModule } from 'primeng/primeng';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
+import { TreeComponent } from './anders-container/tree/tree.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         AndersContainerComponent,
-        LabelContainerComponent
+        LabelContainerComponent,
+        TreeComponent
       ],
       imports: [
         TableModule,
