@@ -1,11 +1,13 @@
 <app-lines #lines></app-lines>
 <div class = "header">
     <div class = "header-name">
-        Anders Sundheim
+        <div class = "header-text"routerLink = "/anders">
+            Anders Sundheim
+        </div>
     </div>
     <app-seperator></app-seperator>
     <div class="header-sub">
-        <a href="about.html" style="padding-right:1%">
+            <a routerLink="/about" routerLinkActive="active" style="padding-right:1%">
             About
         </a>
         <a href="demos.html" style = "padding-left:1%">
@@ -13,21 +15,6 @@
         </a>
     </div>
 </div>
-<p-table [value] = "modules" #tab>
-    <ng-template pTemplate = "body" let-modules>
-        <tr>
-            <td>
-                <app-anders-container [module] = "modules.module1">
+<router-outlet></router-outlet>
 
-                </app-anders-container>
-            </td>
-            <td>
-                <app-anders-container [module] = "modules.module2">
-
-                </app-anders-container>
-            </td>
-        </tr>
-    </ng-template>
-</p-table>
-<app-seperator></app-seperator>
 

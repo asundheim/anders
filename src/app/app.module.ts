@@ -11,7 +11,25 @@ import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-
 import { SeperatorComponent } from './seperator/seperator.component';
 import { LinesComponent } from './lines/lines.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
 
+const appRoutes: Routes = [
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: '',
+    redirectTo: '/anders',
+    pathMatch: 'full'
+  },
+  {
+    path: 'anders',
+    component: ProjectsComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +38,17 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     TreeComponent,
     DungeonBoxesComponent,
     SeperatorComponent,
-    LinesComponent
+    LinesComponent,
+    AboutComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
     TableModule,
     CardModule,
     GalleriaModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
