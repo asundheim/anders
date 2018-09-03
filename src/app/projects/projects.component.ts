@@ -105,6 +105,17 @@ export class ProjectsComponent implements OnInit {
     } as IModuleRow,
     {
       module1: {
+        name: 'Constellations',
+        labels: [
+          {
+            name: 'Typescript',
+            color: LabelColor.Green
+          }
+        ],
+        image: 'assets/constellations_1.png',
+        repoLink: 'https://github.com/DarthEvandar/darthevandar.github.io'
+      },
+      module2: {
         name: 'Ingress_Java',
         labels: [
           {
@@ -118,19 +129,8 @@ export class ProjectsComponent implements OnInit {
         ] as ILabel[],
         image: 'assets/ingress_1.png',
         repoLink: 'https://github.com/DarthEvandar/Ingress_Dev'
-      } as IModule,
-      module2: {
-        name: 'Hue Go Switch',
-        image: 'assets/go_switch_1.png',
-        labels: [
-          {
-            name: 'Node.JS',
-            color: LabelColor.Red
-          } as ILabel
-        ],
-        repoLink: 'https://github.com/DarthEvandar/go-switch'
       } as IModule
-    } as IModuleRow,
+    },
     {
       module1: {
         name: 'Vector Terrain',
@@ -166,6 +166,19 @@ export class ProjectsComponent implements OnInit {
           } as ILabel
         ],
         repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree'
+      } as IModule
+    } as IModuleRow,
+    {
+      module1: {
+        name: 'Hue Go Switch',
+        image: 'assets/go_switch_1.png',
+        labels: [
+          {
+            name: 'Node.JS',
+            color: LabelColor.Red
+          } as ILabel
+        ],
+        repoLink: 'https://github.com/DarthEvandar/go-switch'
       } as IModule
     } as IModuleRow
   ] as IModuleRow[];
