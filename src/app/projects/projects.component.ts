@@ -113,7 +113,7 @@ export class ProjectsComponent implements OnInit {
           }
         ],
         image: 'assets/constellations_1.png',
-        repoLink: 'https://github.com/DarthEvandar/darthevandar.github.io'
+        repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations'
       },
       module2: {
         name: 'Perlin Circles',
