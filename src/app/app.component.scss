@@ -1,12 +1,15 @@
 app-anders-container{
     text-align: center;
 }
-.header, .header-sub {
+.header {
+    position: relative;
+}
+.header-name, .header-sub {
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
 }
-.header {
+.header-name {
     font-size: 72px;
 }
 .header-sub {
