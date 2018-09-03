@@ -10,7 +10,7 @@ import { ILabel } from '../interfaces/ILabel';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   modules = [
     {
       module1: {
@@ -162,45 +162,24 @@ export class AppComponent implements OnInit{
   points = [];
   @ViewChild('connectyLines') canvasRef: ElementRef;
   @ViewChild('tab') tableRef: ElementRef;
-  @HostListener('document:mousemove', ['$event']) 
+  @HostListener('document:mousemove', ['$event']);
   onMouseMove(e: any) {
-    console.log(e);
     const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
-    this.points[Math.floor(e.clientY / 15)][Math.floor(e.clientX / 15)].forEach((p) => {
+    ctx.strokeStyle = 'rgba(163, 163, 163, 0.3)';
+    ctx.clearRect(0, 0, this.getWidth(), this.getHeight());
+    this.points[Math.floor((e.clientX / this.getWidth()) * 15)][Math.floor(e.clientY / (this.getHeight()) * 15)]
+    .forEach((p) => {
       ctx.beginPath();
       ctx.moveTo(e.clientX, e.clientY);
       ctx.lineTo(p.x, p.y);
       ctx.stroke();
     });
   }
+
   ngOnInit() {
-    
-  }
-  
-  drawNew() {
-    const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
     this.generatePoints();
-    console.log(this.points);
-    this.points.forEach((t) => {
-      t.forEach((p) => {
-        p.forEach((s) => {
-          console.log(s);
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, 1, 0, Math.PI * 2);
-          ctx.fill();
-        })
-      })
-    });
-    for (let i = 0; i < this.getWidth(); i += this.getWidth() / 15) {
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, this.getHeight());
-      ctx.stroke();
-      for (let j = 0; j < this.getHeight(); j += this.getHeight() / 15) {
-        ctx.moveTo(0, j);
-        ctx.lineTo(this.getWidth(), j);
-      }
-    }
   }
+
   getWidth() {
     return window.innerWidth;
   }
@@ -218,7 +197,7 @@ export class AppComponent implements OnInit{
       const tempCol = [];
       for (let j = 0; j < this.getHeight(); j += this.getHeight() / 15) {
         const tempRow = [];
-        for (let k = 0; k < 2; k++) {
+        for (let k = 0; k < 3; k++) {
           for (let l = 0; l < 2; l++) {
             tempRow.push({
               x: this.getRandom(i, i + this.getWidth() / 15),
