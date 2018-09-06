@@ -11,6 +11,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 export class AndersContainerComponent {
   faInfoCircle = faInfoCircle;
+
   @ViewChild('tree') tree: TreeComponent;
   @ViewChild('dungeonBoxes') dungeonBoxes: DungeonBoxesComponent;
   @Input() module: IModule;

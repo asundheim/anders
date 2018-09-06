@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ConstellationsComponent } from './constellations/constellations.component';
 
 @Component({
@@ -7,11 +7,11 @@ import { ConstellationsComponent } from './constellations/constellations.compone
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
 
   @ViewChild('constellations') constellationsRef: ConstellationsComponent;
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.constellationsRef.generatePoints();
   }
 }

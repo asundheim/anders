@@ -22,11 +22,11 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/anders',
+    redirectTo: '/projects',
     pathMatch: 'full'
   },
   {
-    path: 'anders',
+    path: 'projects',
     component: ProjectsComponent
   }
 ];

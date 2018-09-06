@@ -33,7 +33,6 @@ export class ConstellationsComponent implements OnInit {
         });
       }
     }
-
   }
   getWidth() {
     return window.innerWidth;
