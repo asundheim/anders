@@ -1,5 +1,8 @@
-app-tree, app-dungeon-boxes, fa {
+app-tree, app-dungeon-boxes, fa, i {
     cursor: pointer;
+}
+p-toggleButton {
+    margin-right: 1em;
 }
 .card-header {
     float: right;
@@ -10,3 +13,7 @@ app-tree, app-dungeon-boxes, fa {
     display: inline-block;
     margin: 1em;
 }
+.toggle {
+    margin-right: 1em;
+}
+

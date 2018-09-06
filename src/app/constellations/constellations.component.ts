@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { globals } from '../../environments/environment';
 
 @Component({
   selector: 'app-constellations',
@@ -12,26 +13,30 @@ export class ConstellationsComponent implements OnInit {
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
-    ctx.strokeStyle = 'rgba(163, 163, 163, 0.3)';
-    ctx.fillStyle = 'rgba(163, 163, 163, 0.3)';
-    ctx.clearRect(0, 0, this.getWidth(), this.getHeight());
-    const xIndex = Math.floor((e.clientX / this.getWidth()) * 15);
-    const yIndex = Math.floor(e.clientY / (this.getHeight()) * 15);
-    this.points[xIndex][yIndex]
-    .forEach((p) => {
-      ctx.beginPath();
-      ctx.moveTo(e.clientX, e.clientY);
-      ctx.lineTo(p.x, p.y);
-      ctx.stroke();
-    });
-    for (let i = (xIndex !== 0 ? -1 : 0); i <= (xIndex !== 15 ? 1 : 0); i++) {
-      for (let j = (yIndex !== 0 ? -1 : 0); j <= (yIndex !== 15 ? 1 : 0); j++) {
-        this.points[xIndex + i][yIndex + j].forEach((p) => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, 2, 0, 2 * Math.PI);
-          ctx.fill();
-        });
+      if (globals.constellationsEnabled) {
+      ctx.strokeStyle = 'rgba(163, 163, 163, 0.3)';
+      ctx.fillStyle = 'rgba(163, 163, 163, 0.3)';
+      ctx.clearRect(0, 0, this.getWidth(), this.getHeight());
+      const xIndex = Math.floor((e.clientX / this.getWidth()) * 15);
+      const yIndex = Math.floor(e.clientY / (this.getHeight()) * 15);
+      this.points[xIndex][yIndex]
+      .forEach((p) => {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+      });
+      for (let i = (xIndex !== 0 ? -1 : 0); i <= (xIndex !== 15 ? 1 : 0); i++) {
+        for (let j = (yIndex !== 0 ? -1 : 0); j <= (yIndex !== 15 ? 1 : 0); j++) {
+          this.points[xIndex + i][yIndex + j].forEach((p) => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2, 0, 2 * Math.PI);
+            ctx.fill();
+          });
+        }
       }
+    } else {
+      ctx.clearRect(0, 0, this.getWidth(), this.getHeight());
     }
   }
   getWidth() {

@@ -1,6 +1,10 @@
-<p-card [title]="module.name" [style] = "{width: '400px'}">
+<p-card [ngClass] = "{'toggleHeader': module.toggle}"[title]="module.name" [style] = "{width: '400px'}">
     <p-header class = "card-header">
-        <fa name="info-circle" size="lg" (click)="goToInfo(module.repoLink)"></fa>
+        <i class="fas fa-toggle-on fa-lg toggle" *ngIf="module.toggle && constellation"
+        (click)="toggleConstellations()"></i>
+        <i class="fas fa-toggle-off fa-lg toggle" *ngIf="module.toggle && !constellation"
+        (click)="toggleConstellations()"></i>
+        <i class="fa fa-info-circle fa-lg" (click)="goToInfo(module.repoLink)"></i>
     </p-header>
     <div *ngIf = "module.images && module.images.length > 1">
         <p-galleria [images] = "module.images"
@@ -24,7 +28,7 @@
     <p-footer>
         <app-label-container [labels] = "module.labels"></app-label-container>
         <div *ngIf = "module.interact" class = "interact">
-            <fa name="desktop" size = "lg" (click)="goToInfo(module.interact)"></fa>
+            <i class="fa fa-desktop fa-lg" (click)="goToInfo(module.interact)"></i>
         </div>
     </p-footer>
 </p-card>

@@ -3,6 +3,7 @@ import { IModule } from '../../interfaces/IModule';
 import { TreeComponent } from './tree/tree.component';
 import { DungeonBoxesComponent } from './dungeon-boxes/dungeon-boxes.component';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { globals } from '../../environments/environment';
 @Component({
   selector: 'app-anders-container',
   templateUrl: './anders-container.component.html',
@@ -11,7 +12,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 export class AndersContainerComponent {
   faInfoCircle = faInfoCircle;
-
+  constellation = globals.constellationsEnabled;
   @ViewChild('tree') tree: TreeComponent;
   @ViewChild('dungeonBoxes') dungeonBoxes: DungeonBoxesComponent;
   @Input() module: IModule;
@@ -27,5 +28,10 @@ export class AndersContainerComponent {
 
   goToInfo(repoLink: string) {
     window.open(repoLink);
+  }
+
+  toggleConstellations() {
+    this.constellation = !this.constellation;
+    globals.constellationsEnabled = !globals.constellationsEnabled;
   }
 }

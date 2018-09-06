@@ -112,6 +112,7 @@ export class ProjectsComponent implements OnInit {
             color: LabelColor.Green
           }
         ],
+        toggle: true,
         image: 'assets/constellations_1.png',
         repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations'
       },

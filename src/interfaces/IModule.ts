@@ -9,4 +9,5 @@ export interface IModule {
     dungeonBoxes?: boolean;
     repoLink: string;
     interact?: string;
+    toggle?: boolean;
 }

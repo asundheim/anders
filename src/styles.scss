@@ -3,6 +3,14 @@
     margin-left: auto;
     margin-right: auto;
 }
+.ui-card-title {
+    margin-left: 1em;
+}
+.toggleHeader {
+    .ui-card-title {
+        margin-left: 2em !important;
+    }
+}
 tr {
     background-color: unset!important;
     text-align: center;
