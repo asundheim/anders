@@ -9,6 +9,7 @@ import { GalleriaModule, CardModule } from 'primeng/primeng';
 import { TreeComponent } from '../anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from '../anders-container/dungeon-boxes/dungeon-boxes.component';
 import { LabelContainerComponent } from '../anders-container/label-container/label-container.component';
+import { PerlinComponent } from '../anders-container/perlin/perlin.component';
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
@@ -23,7 +24,8 @@ describe('ProjectsComponent', () => {
         AngularFontAwesomeComponent,
         TreeComponent,
         DungeonBoxesComponent,
-        LabelContainerComponent
+        LabelContainerComponent,
+        PerlinComponent
       ],
       imports: [
         TableModule,

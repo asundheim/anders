@@ -7,6 +7,7 @@ export interface IModule {
     image: string;
     tree?: boolean;
     dungeonBoxes?: boolean;
+    perlin?: boolean;
     repoLink: string;
     interact?: string;
     toggle?: boolean;

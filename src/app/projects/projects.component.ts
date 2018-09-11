@@ -124,9 +124,9 @@ export class ProjectsComponent implements OnInit {
             color: LabelColor.Orange
           }
         ],
-        image: 'assets/perlin_1.png',
         repoLink: 'https://github.com/DarthEvandar/PerlinCircles',
-        interact: 'https://darthevandar.github.io/PerlinCircles/'
+        interact: 'https://darthevandar.github.io/PerlinCircles/',
+        perlin: true
       } as IModule
     },
     {

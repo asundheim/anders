@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ConstellationsComponent } from './constellations/constellations.component';
+import { PerlinComponent } from './anders-container/perlin/perlin.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -43,7 +44,8 @@ describe('AppComponent', () => {
         SeperatorComponent,
         DungeonBoxesComponent,
         AboutComponent,
-        ProjectsComponent
+        ProjectsComponent,
+        PerlinComponent
       ],
       imports: [
         TableModule,

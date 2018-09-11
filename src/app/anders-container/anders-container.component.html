@@ -24,6 +24,9 @@
     <div *ngIf = "module.dungeonBoxes">
         <app-dungeon-boxes #dungeonBoxes (click)="newBoxes()"></app-dungeon-boxes>
     </div>
+    <div *ngIf = "module.perlin">
+        <app-perlin #perlin></app-perlin>
+    </div>
     
     <p-footer>
         <app-label-container [labels] = "module.labels"></app-label-container>

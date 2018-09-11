@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ConstellationsComponent } from './constellations/constellations.component';
+import { PerlinComponent } from './anders-container/perlin/perlin.component';
 
 const appRoutes: Routes = [
   {
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     SeperatorComponent,
     ConstellationsComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    PerlinComponent
   ],
   imports: [
     BrowserModule,
