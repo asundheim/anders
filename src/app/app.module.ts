@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { CardModule, ToggleButtonModule } from 'primeng/primeng';
+import { CardModule, ToggleButtonModule, LightboxModule } from 'primeng/primeng';
 import { GalleriaModule } from 'primeng/galleria';
 import { AppComponent } from './app.component';
 import { AndersContainerComponent } from './anders-container/anders-container.component';
@@ -49,7 +49,8 @@ const appRoutes: Routes = [
     CardModule,
     GalleriaModule,
     RouterModule.forRoot(appRoutes),
-    ToggleButtonModule
+    ToggleButtonModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

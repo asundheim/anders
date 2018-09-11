@@ -11,4 +11,5 @@ export interface IModule {
     repoLink: string;
     interact?: string;
     toggle?: boolean;
+    module?: any;
 }
