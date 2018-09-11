@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
 import OpenSimplexNoise from 'open-simplex-noise';
 
 @Component({
@@ -6,7 +6,7 @@ import OpenSimplexNoise from 'open-simplex-noise';
   templateUrl: './perlin.component.html',
   styleUrls: ['./perlin.component.scss']
 })
-export class PerlinComponent implements OnInit {
+export class PerlinComponent implements AfterViewInit {
   active = false;
   openSimplex = new OpenSimplexNoise(Date.now());
   t = 0;
@@ -44,7 +44,9 @@ export class PerlinComponent implements OnInit {
   }
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    const ctx: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
+    ctx.fillText('Mouse Over to Start', 110, 100);
   }
 
 }
