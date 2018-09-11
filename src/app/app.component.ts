@@ -6,8 +6,7 @@ import { ConstellationsComponent } from './constellations/constellations.compone
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-// TODO
-// clicking on pictures
+
 export class AppComponent implements AfterViewInit {
 
   @ViewChild('constellations') constellationsRef: ConstellationsComponent;
