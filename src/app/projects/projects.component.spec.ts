@@ -4,7 +4,6 @@ import { ProjectsComponent } from './projects.component';
 import { TableModule } from 'primeng/table';
 import { AndersContainerComponent } from '../anders-container/anders-container.component';
 import { SeperatorComponent } from '../seperator/seperator.component';
-import { AngularFontAwesomeComponent } from 'angular-font-awesome';
 import { GalleriaModule, CardModule, LightboxModule } from 'primeng/primeng';
 import { TreeComponent } from '../anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from '../anders-container/dungeon-boxes/dungeon-boxes.component';
@@ -21,7 +20,6 @@ describe('ProjectsComponent', () => {
         ProjectsComponent,
         AndersContainerComponent,
         SeperatorComponent,
-        AngularFontAwesomeComponent,
         TreeComponent,
         DungeonBoxesComponent,
         LabelContainerComponent,

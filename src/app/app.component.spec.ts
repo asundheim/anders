@@ -5,7 +5,6 @@ import { TableModule, Table } from 'primeng/table';
 import { CardModule, GalleriaModule, LightboxModule } from 'primeng/primeng';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';
-import { AngularFontAwesomeComponent } from 'angular-font-awesome';
 import { SeperatorComponent } from './seperator/seperator.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DungeonBoxesComponent } from './anders-container/dungeon-boxes/dungeon-boxes.component';
@@ -39,7 +38,6 @@ describe('AppComponent', () => {
         AndersContainerComponent,
         LabelContainerComponent,
         TreeComponent,
-        AngularFontAwesomeComponent,
         ConstellationsComponent,
         SeperatorComponent,
         DungeonBoxesComponent,
