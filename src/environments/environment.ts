@@ -7,7 +7,7 @@ export const environment = {
 };
 
 export const globals = {
-  constellationsEnabled: true
+  constellationsEnabled: false
 };
 /*
  * In development mode, for easier debugging, you can ignore zone related error

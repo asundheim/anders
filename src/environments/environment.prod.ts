@@ -3,5 +3,5 @@ export const environment = {
 };
 
 export const globals = {
-  constellationsEnabled: true
+  constellationsEnabled: false
 };
