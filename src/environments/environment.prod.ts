@@ -3,5 +3,6 @@ export const environment = {
 };
 
 export const globals = {
-  constellationsEnabled: false
+  constellationsEnabled: false,
+  spotifyRedirect: 'https://darthevandar.github.io/anders/spotify'
 };

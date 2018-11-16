@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { AndersContainerComponent } from './anders-container/anders-container.component';
-import { TableModule, Table } from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { CardModule, GalleriaModule, LightboxModule } from 'primeng/primeng';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
 import { TreeComponent } from './anders-container/tree/tree.component';

@@ -7,7 +7,8 @@ export const environment = {
 };
 
 export const globals = {
-  constellationsEnabled: false
+  constellationsEnabled: false,
+  spotifyRedirect: 'http://localhost:4200/spotify'
 };
 /*
  * In development mode, for easier debugging, you can ignore zone related error
