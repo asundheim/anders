@@ -14,6 +14,8 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ConstellationsComponent } from './constellations/constellations.component';
 import { PerlinComponent } from './anders-container/perlin/perlin.component';
+import { SpotifyComponent } from './spotify/spotify.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -28,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent
+  },
+  {
+    path: 'spotify',
+    component: SpotifyComponent
   }
 ];
 @NgModule({
@@ -41,7 +47,8 @@ const appRoutes: Routes = [
     ConstellationsComponent,
     AboutComponent,
     ProjectsComponent,
-    PerlinComponent
+    PerlinComponent,
+    SpotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,8 @@ const appRoutes: Routes = [
     GalleriaModule,
     RouterModule.forRoot(appRoutes),
     ToggleButtonModule,
-    LightboxModule
+    LightboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

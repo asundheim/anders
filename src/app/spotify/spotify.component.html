@@ -1,0 +1,10 @@
+<p class="centered">
+  <i class="fa fa-desktop fa-lg" (click)="getPlaylists()"></i>
+</p>
+<p class = "left" *ngFor = "let playlist of playlists" (click)="getSongs(playlist)">
+    {{ playlist.name }}
+</p>
+<p class = "right" *ngFor = "let song of songs">
+  {{ song.track.name }}
+</p>
+
