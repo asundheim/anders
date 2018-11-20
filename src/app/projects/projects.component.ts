@@ -33,6 +33,28 @@ export class ProjectsComponent implements OnInit {
         interact: 'https://darthevandar.github.io/DungeonBoxes/'
       } as IModule,
       module2: {
+        name: 'Spotify Randomizer',
+        image: 'assets/spotify.png',
+        labels: [
+          {
+            name: 'TS',
+            color: LabelColor.Green
+          } as ILabel,
+          {
+            name: 'HTML',
+            color: LabelColor.Blue
+          },
+          {
+            name: 'SASS',
+            color: LabelColor.LightBlue
+          } as ILabel
+        ],
+        repoLink: 'https://darthevandar.github.io/anders/spotify',
+        interact: 'https://darthevandar.github.io/anders/spotify'
+      } as IModule,
+    } as IModuleRow,
+    {
+      module1: {
         name: 'Lounge for CS:GO',
         image: 'assets/lounge_1.png',
         labels: [
@@ -50,10 +72,8 @@ export class ProjectsComponent implements OnInit {
           } as ILabel
         ],
         repoLink: 'https://github.com/DarthEvandar/LoungeforCSGO'
-      } as IModule
-    } as IModuleRow,
-    {
-      module1: {
+      } as IModule,
+      module2: {
         name: 'Binary Trees',
         labels: [
           {
@@ -72,8 +92,10 @@ export class ProjectsComponent implements OnInit {
         tree: true,
         repoLink: 'https://github.com/DarthEvandar/2dtree',
         interact: 'http://darthevandar.github.io/2dtree'
-      } as IModule,
-      module2: {
+      } as IModule
+    } as IModuleRow,
+    {
+      module1: {
         name: 'Place 3D',
         images: [
           {source: 'assets/place_1.png'},
@@ -101,21 +123,7 @@ export class ProjectsComponent implements OnInit {
         ],
         repoLink: 'https://github.com/Darthevandar/place3D',
         interact: 'https://darthevandar.github.io/Place3D/'
-      } as IModule
-    } as IModuleRow,
-    {
-      module1: {
-        name: 'Constellations',
-        labels: [
-          {
-            name: 'Typescript',
-            color: LabelColor.Green
-          }
-        ],
-        toggle: true,
-        image: 'assets/constellations_1.png',
-        repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations'
-      },
+      } as IModule,
       module2: {
         name: 'Perlin Circles',
         labels: [
@@ -151,20 +159,17 @@ export class ProjectsComponent implements OnInit {
         repoLink: 'https://github.com/DarthEvandar/VectorTerrain'
       } as IModule,
       module2: {
-        name: 'Lua MST',
-        images: [
-          {source: 'assets/mst_1.png'},
-          {source: 'assets/mst_2.png'}
-        ],
-        imageHeight: 265,
+        name: 'Constellations',
         labels: [
           {
-            name: 'Lua',
-            color: LabelColor.Blue
-          } as ILabel
+            name: 'Typescript',
+            color: LabelColor.Green
+          }
         ],
-        repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree'
-      } as IModule
+        toggle: true,
+        image: 'assets/constellations_1.png',
+        repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations'
+      }
     } as IModuleRow,
     {
       module1: {
@@ -179,19 +184,19 @@ export class ProjectsComponent implements OnInit {
         repoLink: 'https://github.com/DarthEvandar/go-switch'
       } as IModule,
       module2: {
-        name: 'Ingress_Java',
+        name: 'Lua MST',
+        images: [
+          {source: 'assets/mst_1.png'},
+          {source: 'assets/mst_2.png'}
+        ],
+        imageHeight: 265,
         labels: [
           {
-            name: 'Java',
-            color: LabelColor.Orange
-          } as ILabel,
-          {
-            name: 'Swing',
-            color: LabelColor.Orange
-          }
-        ] as ILabel[],
-        image: 'assets/ingress_1.png',
-        repoLink: 'https://github.com/DarthEvandar/Ingress_Dev'
+            name: 'Lua',
+            color: LabelColor.Blue
+          } as ILabel
+        ],
+        repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree'
       } as IModule
     } as IModuleRow
   ] as IModuleRow[];
