@@ -7,11 +7,13 @@
   <div *ngIf = "!showSongs">
     <p class = "centered" *ngFor = "let playlist of playlists" (click)="getSongs(playlist, 0, true)">
       {{ playlist.name }}
+      <br>
+      <img [src] = "playlist.images[0].url" width = "60" height = "60">
   </p>
   </div>
   <div *ngIf = "showSongs">
     <p class = "centered" *ngFor = "let song of songs">
-      {{ song.track.name }}
+      {{ song.track.name }} 
     </p>
   </div>
 </div>

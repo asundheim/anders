@@ -12,4 +12,5 @@ export interface IModule {
     interact?: string;
     toggle?: boolean;
     module?: any;
+    imageLink?: string;
 }

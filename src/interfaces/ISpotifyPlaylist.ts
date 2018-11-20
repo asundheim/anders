@@ -1,11 +1,12 @@
 import { ISpotifyPlaylistTrackObject } from './ISpotifyPlaylistTrackObject';
+import { ISpotifyImage } from './ISpotifyImage';
 
 export interface ISpotifyPlaylist {
     collaborative?: boolean;
-    externalUrls?: any;
+    external_urls?: any;
     href?: string;
     id?: string;
-    images?: any;
+    images?: ISpotifyImage[];
     name?: string;
     owner?: any;
     public?: boolean;

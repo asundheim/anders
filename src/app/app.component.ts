@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ConstellationsComponent } from './constellations/constellations.component';
+import { globals } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,9 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.constellationsRef.generatePoints();
+  }
+
+  getHeader() {
+    return globals.header;
   }
 }

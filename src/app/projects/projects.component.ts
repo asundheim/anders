@@ -3,6 +3,7 @@ import { LabelColor } from '../../enums/label-colors';
 import { ILabel } from '../../interfaces/ILabel';
 import { IModule } from '../../interfaces/IModule';
 import { IModuleRow } from '../../interfaces/IModuleRow';
+import { globals } from 'src/environments/environment';
 
 @Component({
   selector: 'app-projects',
@@ -49,8 +50,9 @@ export class ProjectsComponent implements OnInit {
             color: LabelColor.LightBlue
           } as ILabel
         ],
-        repoLink: 'https://darthevandar.github.io/anders/spotify',
-        interact: 'https://darthevandar.github.io/anders/spotify'
+        repoLink: 'https://github.com/DarthEvandar/anders/tree/master/src/app/spotify',
+        interact: 'https://darthevandar.github.io/anders/spotify',
+        imageLink: 'https://darthevandar.github.io/anders/spotify'
       } as IModule,
     } as IModuleRow,
     {
@@ -203,6 +205,7 @@ export class ProjectsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    globals.header = 'Anders Sundheim';
   }
 
 }

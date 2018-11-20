@@ -16,12 +16,9 @@
         </p-galleria>
     </div>
     <div *ngIf = "module.image">
-        <p-lightbox type = "content">
-            <a class="group" href="#">
-                <img [src] = "module.image">
-            </a> 
+        <a [href] = "module.imageLink? module.imageLink:'javascript:;'">
             <img [src] = "module.image">
-        </p-lightbox> 
+        </a>
     </div>
     <div *ngIf = "module.tree">
         <app-tree #tree (click)="newTree()"></app-tree>
