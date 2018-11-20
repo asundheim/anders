@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpotifyComponent } from './spotify.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ButtonModule } from 'primeng/primeng';
 
 describe('SpotifyComponent', () => {
   let component: SpotifyComponent;
@@ -10,7 +11,8 @@ describe('SpotifyComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SpotifyComponent ],
-      providers: [ HttpClient, HttpHandler ]
+      providers: [ HttpClient, HttpHandler ],
+      imports: [ ButtonModule]
     })
     .compileComponents();
   }));
