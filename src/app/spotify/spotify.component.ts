@@ -5,6 +5,7 @@ import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
 import { Router } from '@angular/router';
 import { ISpotifyPlaylistTrackObject } from 'src/interfaces/ISpotifyPlaylistTrackObject';
 import { ISpotifyTrackObject } from 'src/interfaces/ISpotifyTrackObject';
+import { globals } from 'src/environments/environment';
 
 @Component({
   selector: 'app-spotify',
@@ -22,6 +23,7 @@ export class SpotifyComponent implements OnInit {
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    globals.header = 'Spotify Randomizer';
     if (window.location.hash) {
       this.auth = window.location.hash.split('&')[0].split('=')[1];
     } else {

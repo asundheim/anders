@@ -2,16 +2,16 @@
 <div class = "header">
     <div class = "header-name">
         <div class = "header-text"routerLink = "/projects">
-            Anders Sundheim
+            {{ getHeader() }}
         </div>
     </div>
     <app-seperator></app-seperator>
     <div class="header-sub">
+        <a routerLink="/" routerLinkActive="active" style="padding-right:1%">
+            Projects
+        </a>
         <a routerLink="/about" routerLinkActive="active" style="padding-right:1%">
             About
-        </a>
-        <a routerLink="/spotify" routerLinkActive="active" style="padding-right:1%">
-            Spotify
         </a>
     </div>
 </div>
