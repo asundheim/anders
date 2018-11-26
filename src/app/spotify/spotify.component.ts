@@ -76,7 +76,7 @@ export class SpotifyComponent implements OnInit {
         this.getRandomInt(0, this.songs.length + 1)
       ).subscribe(
         (response) => {
-          this.loadingProgress += 100 / this.songs.length;
+          this.loadingProgress += Math.floor(100 / this.songs.length);
           this.randomizeSongs(index + 1, response.snapshot_id);
         },
         (error: HttpErrorResponse) => this.errorHandler(error)
@@ -134,7 +134,7 @@ export class SpotifyComponent implements OnInit {
               }
             }
             ordered[index] = unordered[index];
-            this.loadingProgress += (100 / this.songs.length);
+            this.loadingProgress += Math.floor(100 / this.songs.length);
             this.recReset(index + 1, unordered, ordered, response.snapshot_id);
           },
           (error: HttpErrorResponse) => this.errorHandler(error)
