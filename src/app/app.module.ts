@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule } from 'primeng/primeng';
+import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService } from 'primeng/primeng';
 import { GalleriaModule } from 'primeng/galleria';
+import { ToastModule } from 'primeng/toast';
 import { AppComponent } from './app.component';
 import { AndersContainerComponent } from './anders-container/anders-container.component';
 import { LabelContainerComponent } from './anders-container/label-container/label-container.component';
@@ -16,6 +17,7 @@ import { ConstellationsComponent } from './constellations/constellations.compone
 import { PerlinComponent } from './anders-container/perlin/perlin.component';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {
@@ -59,9 +61,11 @@ const appRoutes: Routes = [
     ToggleButtonModule,
     LightboxModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ MessageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
