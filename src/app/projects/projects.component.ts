@@ -52,7 +52,7 @@ export class ProjectsComponent implements OnInit {
         ],
         repoLink: 'https://github.com/DarthEvandar/anders/tree/master/src/app/spotify',
         interact: 'https://darthevandar.github.io/anders/spotify',
-        imageLink: 'https://darthevandar.github.io/anders/spotify'
+        imageLink: 'https://anderssundheim.me/anders/spotify'
       } as IModule,
     } as IModuleRow,
     {
