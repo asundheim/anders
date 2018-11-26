@@ -32,7 +32,7 @@ export class SpotifyService {
       '?client_id=b3df13bb570843e78f1c9eadf6880e8b' +
       '&response_type=token' +
       '&redirect_uri=' + globals.spotifyRedirect +
-      '&scope=user-read-private%20playlist-modify-public%20playlist-modify-private'
+      '&scope=user-read-private%20playlist-modify-public%20playlist-modify-private%20playlist-read-collaborative%20playlist-read-private'
     );
   }
 
