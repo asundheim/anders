@@ -1,9 +1,12 @@
 <p-toast></p-toast>
 <div style = "position: relative; padding-bottom: 100px">
+  <p class = "centered" *ngIf = "loading">
+      {{ loadingProgress }}%
+  </p>
   <p class="centered">
     <p-button label = "Load Playlists" (click) = "getPlaylists()" *ngIf = "!showSongs" styleClass = "padded"></p-button>
     <p-button label = "Back" class = "padded" (click) = "showPlaylists()" *ngIf = "showSongs"></p-button>
-    <p-button label = "Randomize Songs" class = "padded" (click)="randomizeSongs()" *ngIf = "showSongs"></p-button>
+    <p-button label = "Randomize Songs" class = "padded" (click)="randomizeSongs(0, null)" *ngIf = "showSongs"></p-button>
     <p-button label = "Reset Order" class = "padded" (click)="resetOrder()" *ngIf = "showSongs"></p-button>
   </p>
   <div *ngIf = "!showSongs">
