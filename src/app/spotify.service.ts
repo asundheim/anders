@@ -3,6 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ISpotifyPlaylistCollection } from 'src/interfaces/ISpotifyPlaylistCollection';
 import { globals } from '../environments/environment';
 import { ISpotifyPlaylistTrackObject } from 'src/interfaces/ISpotifyPlaylistTrackObject';
+import { map } from 'rxjs/operators';
+import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
+import { Observable } from 'rxjs';
+import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +17,9 @@ export class SpotifyService {
 
   baseURL = 'https://api.spotify.com/v1';
 
-  authOptions = {
-    headers: new HttpHeaders({
-      'client_id': 'b3df13bb570843e78f1c9eadf6880e8b',
-      'response_type': 'token',
-      'redirect_uri': globals.spotifyRedirect,
-      'scope': 'user-read-private'
-    })
-  };
-
-  getPlaylists(auth: string) {
-    return this.http.get<ISpotifyPlaylistCollection>(`${this.baseURL}/me/playlists`, {headers: this.constructHeaders(auth)});
+  getPlaylists(auth: string): Observable<ISpotifyPlaylist[]> {
+    return this.http.get<ISpotifyPlaylistCollection>(`${this.baseURL}/me/playlists`, {headers: this.constructHeaders(auth)})
+      .pipe(map((x: ISpotifyPlaylistCollection) => x.items));
   }
 
   getUser(auth: string) {
@@ -44,10 +40,10 @@ export class SpotifyService {
     return this.http.get<ISpotifyPlaylistTrackObject>(`${href}?offset=${offset}`, {headers: this.constructHeaders(auth)});
   }
 
-  reorderPlaylist(auth: string, id: string, startPos: number, insertPos: number) {
-    return this.http.put(
+  reorderPlaylist(auth: string, id: string, snapshotId: string, startPos: number, insertPos: number) {
+    return this.http.put<ISpotifyReorderResponse>(
         `${this.baseURL}/playlists/${id}/tracks`,
-        `{"range_start" : ${startPos}, "insert_before" : ${insertPos}}`,
+        `{"range_start" : ${startPos}, "insert_before" : ${insertPos} ${snapshotId ? `, "snapshot_id": "${snapshotId}"` : ``}}`,
         {headers: this.constructHeaders(auth)}
     );
   }

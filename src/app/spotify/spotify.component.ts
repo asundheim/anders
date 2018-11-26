@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
-import { ISpotifyPlaylistCollection } from '../../interfaces/ISpotifyPlaylistCollection';
 import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
 import { ISpotifyPlaylistTrackObject } from 'src/interfaces/ISpotifyPlaylistTrackObject';
 import { ISpotifyTrackObject } from 'src/interfaces/ISpotifyTrackObject';
 import { globals } from 'src/environments/environment';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
 
 @Component({
   selector: 'app-spotify',
@@ -20,6 +20,8 @@ export class SpotifyComponent implements OnInit {
   output: string;
   auth: string;
   showSongs = false;
+  loading = false;
+  loadingProgress = 0;
 
   constructor(private spotifyService: SpotifyService, private messageService: MessageService) { }
 
@@ -34,9 +36,9 @@ export class SpotifyComponent implements OnInit {
 
   getPlaylists() {
     this.spotifyService.getPlaylists(this.auth).subscribe(
-      (data: ISpotifyPlaylistCollection) => {
+      (data: ISpotifyPlaylist[]) => {
         console.log(data);
-        this.playlists = data.items;
+        this.playlists = data;
       },
       (error: HttpErrorResponse) => this.errorHandler(error)
     );
@@ -59,30 +61,27 @@ export class SpotifyComponent implements OnInit {
     );
   }
 
-  randomizeSongs() {
-    for (let i = 0; i < this.songs.length; i++) {
+  randomizeSongs(index: number, snapshotId: string) {
+    this.loading = true;
+    if (index === this.songs.length) {
+      this.loading = false;
+      this.loadingProgress = 0;
+      this.getSongs(this.currentPlaylist, 0, true);
+    } else {
       this.spotifyService.reorderPlaylist(
         this.auth,
         this.currentPlaylist.id,
-        i,
+        snapshotId,
+        index,
         this.getRandomInt(0, this.songs.length + 1)
       ).subscribe(
-        () => {},
+        (response) => {
+          this.loadingProgress += 100 / this.songs.length;
+          this.randomizeSongs(index + 1, response.snapshot_id);
+        },
         (error: HttpErrorResponse) => this.errorHandler(error)
       );
     }
-    for (let i = this.songs.length - 1; i > -1; i--) {
-      this.spotifyService.reorderPlaylist(
-        this.auth,
-        this.currentPlaylist.id,
-        i,
-        this.getRandomInt(0, this.songs.length + 1)
-      ).subscribe(
-        () => {},
-        (error: HttpErrorResponse) => this.errorHandler(error)
-      );
-    }
-    this.getSongs(this.currentPlaylist, 0, true);
   }
 
   getRandomInt(min: number, max: number) {
@@ -96,9 +95,12 @@ export class SpotifyComponent implements OnInit {
   }
 
   resetOrder() {
-    let unordered: ISpotifyTrackObject[] = this.songs.concat([]);
-    const ordered = this.songs.concat([]);
+    this.loading = true;
 
+    let unordered: ISpotifyTrackObject[] = this.songs.concat([]);
+    const ordered: ISpotifyTrackObject[] = this.songs.concat([]);
+
+    // Sort
     unordered = unordered.sort((a, b) => {
         if (a.added_at > b.added_at) {
           return 1;
@@ -108,22 +110,36 @@ export class SpotifyComponent implements OnInit {
           return -1;
         }
     });
+    this.recReset(0, unordered, ordered, null);
+  }
 
-    for (let i = 0; i < unordered.length; i++) {
-      if (i !== ordered.indexOf(unordered[i])) {
-        this.spotifyService
-          .reorderPlaylist(this.auth, this.currentPlaylist.id, ordered.indexOf(unordered[i]), i)
-          .subscribe(
-            () => {},
-            (error: HttpErrorResponse) => this.errorHandler(error)
-          );
-      }
-      const temp = ordered[i];
-      ordered[i] = ordered[ordered.indexOf(unordered[i])];
-      ordered[ordered.indexOf(unordered[i])] = temp;
+  recReset(index: number, unordered: ISpotifyTrackObject[], ordered: ISpotifyTrackObject[], snapshotId: string) {
+    if (index === this.songs.length) {
+      this.loading = false;
+      this.loadingProgress = 0;
+      this.getSongs(this.currentPlaylist, 0, true);
+    } else {
+      const current = ordered.indexOf(unordered[index]);
+      this.spotifyService
+        .reorderPlaylist(this.auth, this.currentPlaylist.id, snapshotId, current, index)
+        .subscribe(
+          (response: ISpotifyReorderResponse) => {
+            if (current < index) { // shift up
+              for (let i = current; i < index; i++) {
+                ordered[i] = ordered[i + 1];
+              }
+            } else if (current > index) { // shift down
+              for (let i = current; i > index; i--) {
+                ordered[i] = ordered[i - 1];
+              }
+            }
+            ordered[index] = unordered[index];
+            this.loadingProgress += (100 / this.songs.length);
+            this.recReset(index + 1, unordered, ordered, response.snapshot_id);
+          },
+          (error: HttpErrorResponse) => this.errorHandler(error)
+        );
     }
-
-    this.getSongs(this.currentPlaylist, 0, true);
   }
 
   errorHandler(err: HttpErrorResponse) {
