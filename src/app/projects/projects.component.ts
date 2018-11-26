@@ -51,7 +51,7 @@ export class ProjectsComponent implements OnInit {
           } as ILabel
         ],
         repoLink: 'https://github.com/DarthEvandar/anders/tree/master/src/app/spotify',
-        interact: 'https://darthevandar.github.io/anders/spotify',
+        interact: 'https://anderssundheim.me/anders/spotify',
         imageLink: 'https://anderssundheim.me/anders/spotify'
       } as IModule,
     } as IModuleRow,
