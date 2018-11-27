@@ -144,20 +144,29 @@ export class SpotifyComponent implements OnInit {
 
   errorHandler(err: HttpErrorResponse) {
     switch (err.error.error.status) {
-      case 401:
-        this.spotifyService.getAuth();
-        break;
       case 400:
         alert('Something bad happened. Uh oh.');
         break;
-      case 502:
+      case 401:
+        this.spotifyService.getAuth();
+        break;
+      case 403:
         this.messageService.add(
           {
             severity: 'error',
-            summary: '502',
+            summary: '403',
+            detail: 'You don\'t have permission to modify this playlist.'
+          });
+          break;
+      default:
+        this.messageService.add(
+          {
+            severity: 'error',
+            summary: `${err.error.error.status}`,
             detail: 'Something weird happpened. It\'s not our fault.'
           }
         );
+        break;
     }
   }
 
