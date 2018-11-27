@@ -13,4 +13,5 @@ export interface IModule {
     toggle?: boolean;
     module?: any;
     imageLink?: string;
+    description: string;
 }

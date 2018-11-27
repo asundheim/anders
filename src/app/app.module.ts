@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService } from 'primeng/primeng';
+import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService, TooltipModule } from 'primeng/primeng';
 import { GalleriaModule } from 'primeng/galleria';
 import { ToastModule } from 'primeng/toast';
 import { AppComponent } from './app.component';
@@ -63,7 +63,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     ButtonModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TooltipModule
   ],
   providers: [ MessageService ],
   bootstrap: [AppComponent]
