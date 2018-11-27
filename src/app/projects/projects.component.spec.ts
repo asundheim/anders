@@ -4,7 +4,7 @@ import { ProjectsComponent } from './projects.component';
 import { TableModule } from 'primeng/table';
 import { AndersContainerComponent } from '../anders-container/anders-container.component';
 import { SeperatorComponent } from '../seperator/seperator.component';
-import { GalleriaModule, CardModule, LightboxModule } from 'primeng/primeng';
+import { GalleriaModule, CardModule, LightboxModule, TooltipModule } from 'primeng/primeng';
 import { TreeComponent } from '../anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from '../anders-container/dungeon-boxes/dungeon-boxes.component';
 import { LabelContainerComponent } from '../anders-container/label-container/label-container.component';
@@ -29,7 +29,8 @@ describe('ProjectsComponent', () => {
         TableModule,
         GalleriaModule,
         CardModule,
-        LightboxModule
+        LightboxModule,
+        TooltipModule
       ]
     })
     .compileComponents();
