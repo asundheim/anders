@@ -1,4 +1,3 @@
 # My Website
 # TODO
-Tooltips
-Mobile
+- Mobile
