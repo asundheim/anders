@@ -143,7 +143,9 @@ export class SpotifyComponent implements OnInit {
   }
 
   errorHandler(err: HttpErrorResponse) {
-    switch (err.error.error.status) {
+    this.loading = false;
+    this.loadingProgress = 0;
+    switch (err.error.error.status) {  
       case 400:
         alert('Something bad happened. Uh oh.');
         break;
