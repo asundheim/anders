@@ -4,7 +4,7 @@
         (click)="toggleConstellations()"></i>
         <i class="fas fa-toggle-off fa-lg toggle" *ngIf="module.toggle && !constellation"
         (click)="toggleConstellations()"></i>
-        <i class="fa fa-info-circle fa-lg" (click)="goToInfo(module.repoLink)"></i>
+        <i class="fa fa-info-circle fa-lg" (click)="goToInfo(module.repoLink)" [pTooltip]="module.description"></i>
     </p-header>
     <div *ngIf = "module.images && module.images.length > 1">
         <p-galleria [images] = "module.images"
