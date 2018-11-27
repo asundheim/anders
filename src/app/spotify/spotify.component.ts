@@ -61,33 +61,22 @@ export class SpotifyComponent implements OnInit {
     );
   }
 
-  randomizeSongs(index: number, snapshotId: string) {
+  rando() {
     this.loading = true;
-    if (index === this.songs.length) {
-      this.loading = false;
-      this.loadingProgress = 0;
-      this.getSongs(this.currentPlaylist, 0, true);
-    } else {
-      this.spotifyService.reorderPlaylist(
-        this.auth,
-        this.currentPlaylist.id,
-        snapshotId,
-        index,
-        this.getRandomInt(0, this.songs.length + 1)
-      ).subscribe(
-        (response) => {
-          this.loadingProgress += Math.floor(100 / this.songs.length);
-          this.randomizeSongs(index + 1, response.snapshot_id);
-        },
-        (error: HttpErrorResponse) => this.errorHandler(error)
-      );
-    }
+
+    let unordered: ISpotifyTrackObject[] = this.songs.concat([]);
+    const ordered: ISpotifyTrackObject[] = this.songs.concat([]);
+
+    unordered = this.shuffleArray(unordered);
+    this.recReset(0, unordered, ordered, null);
   }
 
-  getRandomInt(min: number, max: number) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+  shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
   showPlaylists() {
