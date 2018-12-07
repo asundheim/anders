@@ -403,6 +403,10 @@ MIT
 MIT
 MIT
 
+ngx-device-detector@1.3.4
+MIT
+MIT
+
 @angular/forms@6.1.6
 MIT
 MIT

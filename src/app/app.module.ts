@@ -19,6 +19,7 @@ import { SpotifyComponent } from './spotify/spotify.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeeComponent } from './spotify/treee/treee.component';
+import { DeviceDetectorModule, DeviceDetectorService } from 'ngx-device-detector';
 
 const appRoutes: Routes = [
   {
@@ -70,9 +71,10 @@ const appRoutes: Routes = [
     ButtonModule,
     ToastModule,
     BrowserAnimationsModule,
-    TooltipModule
+    TooltipModule,
+    DeviceDetectorModule
   ],
-  providers: [ MessageService ],
+  providers: [ MessageService, DeviceDetectorService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
