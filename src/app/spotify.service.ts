@@ -7,6 +7,8 @@ import { map } from 'rxjs/operators';
 import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
 import { Observable } from 'rxjs';
 import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
+import { IAuthResponse } from 'src/interfaces/IServerAuth';
+import { ISpotifyCurrentlyPlaying } from 'src/interfaces/ISpotifyCurrentlyPlaying';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +55,18 @@ export class SpotifyService {
       'Content-Type':  'application/json',
       'Authorization': `Bearer ${auth}`
     });
+  }
+
+  getServerAuth() {
+    return this.http.get<IAuthResponse>(`http://138.68.48.39/callback`);
+  }
+
+  getCurrentlyPlaying(auth: string) {
+    return this.http.get<ISpotifyCurrentlyPlaying>(`${this.baseURL}/me/player/currently-playing`, {headers: this.constructHeaders(auth)});
+  }
+
+  getPlaylistData(auth: string, playlistId: string) {
+    return this.http.get<ISpotifyPlaylist>(`${this.baseURL}/playlists/${playlistId}`, {headers: this.constructHeaders(auth)});
   }
 
 }
