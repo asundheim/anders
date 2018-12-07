@@ -4,6 +4,7 @@ import { ILabel } from '../../interfaces/ILabel';
 import { IModule } from '../../interfaces/IModule';
 import { IModuleRow } from '../../interfaces/IModuleRow';
 import { globals } from 'src/environments/environment';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-projects',
@@ -212,10 +213,13 @@ export class ProjectsComponent implements OnInit {
       } as IModule
     } as IModuleRow
   ] as IModuleRow[];
-  constructor() { }
+
+  mobile: boolean;
+  constructor(private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
     globals.header = 'Anders Sundheim';
+    this.mobile = this.deviceService.isMobile();
   }
 
 }
