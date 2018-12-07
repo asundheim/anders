@@ -19,4 +19,8 @@ export class AppComponent implements AfterViewInit {
   getHeader() {
     return globals.header;
   }
+
+  navTo() {
+    location.href = globals.up;
+  }
 }
