@@ -11,6 +11,7 @@ describe('TreeeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ TreeeComponent ],
       providers: [ HttpClient, HttpHandler ]
+
     })
     .compileComponents();
   }));
@@ -19,6 +20,7 @@ describe('TreeeComponent', () => {
     fixture = TestBed.createComponent(TreeeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
