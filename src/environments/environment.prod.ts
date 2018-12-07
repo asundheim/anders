@@ -6,5 +6,5 @@ export const globals = {
   constellationsEnabled: false,
   spotifyRedirect: 'https://anderssundheim.me/anders/spotify',
   header: 'Anders Sundheim',
-  up: 'http://anderssundheim.me/anders/high'
+  up: 'http://anderssundheim.me/anders/ami'
 };

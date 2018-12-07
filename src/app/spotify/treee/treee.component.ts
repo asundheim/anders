@@ -13,7 +13,9 @@ export class TreeeComponent implements OnInit {
 
   ngOnInit() {
     this.spotifyService.getServerAuth().subscribe(response => {
+      console.log(response);
       this.spotifyService.getCurrentlyPlaying(response.access_token).subscribe(current => {
+        console.log(current);
         this.spotifyService.getPlaylistData(response.access_token, current.context.uri.split(':')[4]).subscribe(playlist => {
           console.log(playlist);
           this.isUp = playlist.name === 'fuzzyfeelin';

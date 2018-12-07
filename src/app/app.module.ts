@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     component: SpotifyComponent
   },
   {
-    path: 'high',
+    path: 'ami',
     component: TreeeComponent
   }
 ];

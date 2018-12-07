@@ -10,7 +10,7 @@ export const globals = {
   constellationsEnabled: false,
   spotifyRedirect: 'http://localhost:4200/spotify',
   header: 'Anders Sundheim',
-  up: 'http://localhost:4200/high'
+  up: 'http://localhost:4200/ami'
 };
 /*
  * In development mode, for easier debugging, you can ignore zone related error
