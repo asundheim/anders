@@ -20,11 +20,14 @@ export class TreeeComponent implements OnInit {
         if (current.context) {
           this.spotifyService.getPlaylistData(response.access_token, current.context.uri.split(':')[4]).subscribe(playlist => {
             console.log(playlist);
-            this.isUp = playlist.name === 'fuzzyfeelin';
-            this.loading = false;
-            if (this.isUp) {
-              this.spotifyService.notify().subscribe(() => {});
-            }
+            this.spotifyService.getUpStatus().subscribe(upStatus => {
+              this.isUp = playlist.name === 'fuzzyfeelin' || upStatus.status;
+              this.loading = false;
+              if (this.isUp) {
+                this.spotifyService.notify().subscribe(() => {});
+              }
+            })
+            
           });
         } else {
           this.loading = false;
