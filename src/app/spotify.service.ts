@@ -10,6 +10,7 @@ import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse'
 import { IAuthResponse } from 'src/interfaces/IServerAuth';
 import { ISpotifyCurrentlyPlaying } from 'src/interfaces/ISpotifyCurrentlyPlaying';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { IServerStatus } from 'src/interfaces/IServerStatus';
 
 @Injectable({
   providedIn: 'root'
@@ -70,7 +71,7 @@ export class SpotifyService {
   }
 
   getUpStatus() {
-    return this.http.get(`http://138.68.48.39/status`);
+    return this.http.get<IServerStatus>(`http://138.68.48.39/status`);
   }
 
   getCurrentlyPlaying(auth: string) {
