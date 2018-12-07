@@ -9,6 +9,7 @@ import { SpotifyService } from 'src/app/spotify.service';
 export class TreeeComponent implements OnInit {
 
   isUp: boolean;
+  loading = true;
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
@@ -16,10 +17,19 @@ export class TreeeComponent implements OnInit {
       console.log(response);
       this.spotifyService.getCurrentlyPlaying(response.access_token).subscribe(current => {
         console.log(current);
-        this.spotifyService.getPlaylistData(response.access_token, current.context.uri.split(':')[4]).subscribe(playlist => {
-          console.log(playlist);
-          this.isUp = playlist.name === 'fuzzyfeelin';
-        });
+        if (current.context) {
+          this.spotifyService.getPlaylistData(response.access_token, current.context.uri.split(':')[4]).subscribe(playlist => {
+            console.log(playlist);
+            this.isUp = playlist.name === 'fuzzyfeelin';
+            this.loading = false;
+            if (this.isUp) {
+              this.spotifyService.notify().subscribe(() => {});
+            }
+          });
+        } else {
+          this.loading = false;
+          this.isUp = false;
+        }
       });
     });
   }

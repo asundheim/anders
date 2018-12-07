@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
 import { IAuthResponse } from 'src/interfaces/IServerAuth';
 import { ISpotifyCurrentlyPlaying } from 'src/interfaces/ISpotifyCurrentlyPlaying';
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 @Injectable({
   providedIn: 'root'
@@ -57,8 +58,19 @@ export class SpotifyService {
     });
   }
 
+  scriptHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Access-Control-Allow-Origin': 'Origin',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    });
+  }
+
   getServerAuth() {
-    return this.http.get<IAuthResponse>(`http://138.68.48.39/callback`);
+    return this.http.get<IAuthResponse>(`http://138.68.48.39/auth`);
+  }
+
+  getUpStatus() {
+    return this.http.get(`http://138.68.48.39/status`);
   }
 
   getCurrentlyPlaying(auth: string) {
@@ -67,6 +79,10 @@ export class SpotifyService {
 
   getPlaylistData(auth: string, playlistId: string) {
     return this.http.get<ISpotifyPlaylist>(`${this.baseURL}/playlists/${playlistId}`, {headers: this.constructHeaders(auth)});
+  }
+
+  notify() {
+    return this.http.get(`https://script.google.com/macros/s/AKfycbxWqXFooNxesGmxR8im0I0jHqZOtsT2sMmp_kpVfk_3s9oJ4ZoX/exec`);
   }
 
 }
