@@ -28,6 +28,7 @@
     "core-js": "^2.5.4",
     "delaunay-fast": "^1.0.1",
     "font-awesome": "^4.7.0",
+    "ngx-device-detector": "^1.3.4",
     "open-simplex-noise": "^1.5.0",
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.0.0",

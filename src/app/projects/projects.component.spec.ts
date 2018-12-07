@@ -9,6 +9,7 @@ import { TreeComponent } from '../anders-container/tree/tree.component';
 import { DungeonBoxesComponent } from '../anders-container/dungeon-boxes/dungeon-boxes.component';
 import { LabelContainerComponent } from '../anders-container/label-container/label-container.component';
 import { PerlinComponent } from '../anders-container/perlin/perlin.component';
+import { DeviceDetectorService, DeviceDetectorModule } from 'ngx-device-detector';
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
@@ -30,8 +31,10 @@ describe('ProjectsComponent', () => {
         GalleriaModule,
         CardModule,
         LightboxModule,
-        TooltipModule
-      ]
+        TooltipModule,
+        DeviceDetectorModule
+      ],
+      providers: [ DeviceDetectorService]
     })
     .compileComponents();
   }));
