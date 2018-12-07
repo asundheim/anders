@@ -18,6 +18,7 @@ import { PerlinComponent } from './anders-container/perlin/perlin.component';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TreeeComponent } from './spotify/treee/treee.component';
 
 const appRoutes: Routes = [
   {
@@ -36,6 +37,10 @@ const appRoutes: Routes = [
   {
     path: 'spotify',
     component: SpotifyComponent
+  },
+  {
+    path: 'high',
+    component: TreeeComponent
   }
 ];
 @NgModule({
@@ -50,7 +55,8 @@ const appRoutes: Routes = [
     AboutComponent,
     ProjectsComponent,
     PerlinComponent,
-    SpotifyComponent
+    SpotifyComponent,
+    TreeeComponent
   ],
   imports: [
     BrowserModule,
