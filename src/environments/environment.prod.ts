@@ -5,5 +5,6 @@ export const environment = {
 export const globals = {
   constellationsEnabled: false,
   spotifyRedirect: 'https://anderssundheim.me/anders/spotify',
-  header: 'Anders Sundheim'
+  header: 'Anders Sundheim',
+  up: 'https://anderssundheim.me/anders/high'
 };
