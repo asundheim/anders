@@ -1,3 +1,3 @@
 export interface IServerStatus {
-    status: boolean
+    status: boolean;
 }

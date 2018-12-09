@@ -26,8 +26,7 @@ export class TreeeComponent implements OnInit {
               if (this.isUp) {
                 this.spotifyService.notify().subscribe(() => {});
               }
-            })
-            
+            });
           });
         } else {
           this.loading = false;
