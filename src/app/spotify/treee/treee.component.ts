@@ -17,7 +17,7 @@ export class TreeeComponent implements OnInit {
       console.log(response);
       this.spotifyService.getCurrentlyPlaying(response.access_token).subscribe(current => {
         console.log(current);
-        if (current.context) {
+        if (current && current.context) {
           this.spotifyService.getPlaylistData(response.access_token, current.context.uri.split(':')[4]).subscribe(playlist => {
             console.log(playlist);
             this.spotifyService.getUpStatus().subscribe(upStatus => {
@@ -32,8 +32,8 @@ export class TreeeComponent implements OnInit {
           this.loading = false;
           this.isUp = false;
         }
-      });
-    });
+      }, (error) => this.loading = false);
+    }, (error) => this.loading = false);
   }
 
 }
