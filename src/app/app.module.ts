@@ -71,10 +71,9 @@ const appRoutes: Routes = [
     ButtonModule,
     ToastModule,
     BrowserAnimationsModule,
-    TooltipModule,
-    DeviceDetectorModule
+    TooltipModule
   ],
-  providers: [ MessageService, DeviceDetectorService ],
+  providers: [ MessageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

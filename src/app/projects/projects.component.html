@@ -1,35 +1,7 @@
-<div style = "height: 100%; padding-bottom: 100px;">
-    <p-table [value] = "modules" #tab>
-        <ng-template pTemplate = "body" let-modules *ngIf = "!mobile">
-            <tr>
-                <td>
-                    <app-anders-container [module] = "modules.module1">
-    
-                    </app-anders-container>
-                </td>
-                <td>
-                    <app-anders-container [module] = "modules.module2">
-    
-                    </app-anders-container >
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate = "body" let-modules *ngIf = "mobile">
-            <tr>
-                <td>
-                    <app-anders-container [module] = "modules.module1">
+<div style = "position: relative; padding-bottom: 125px;">
+    <div class = "flex-container">
+        <app-anders-container *ngFor = "let module of modules" [module] = "module">
 
-                    </app-anders-container>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <app-anders-container [module] = "modules.module2">
-                        
-                    </app-anders-container>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+        </app-anders-container>
+    </div>
 </div>
-
