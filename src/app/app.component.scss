@@ -7,7 +7,7 @@ app-anders-container{
 }
 .header-name, .header-sub {
     text-align: center;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Archivo', sans-serif;
     font-weight: 500;
 }
 .header-name {
@@ -35,7 +35,5 @@ app-anders-container{
     align-self: flex-end;
     margin-bottom: .5em;
     color: dimgray;
-}
-.img {
-    cursor: pointer;
+    font-family: 'Archivo', sans-serif;
 }
