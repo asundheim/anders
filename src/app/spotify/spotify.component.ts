@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
-import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
-import { ISpotifyPlaylistTrackObject } from 'src/interfaces/ISpotifyPlaylistTrackObject';
-import { ISpotifyTrackObject } from 'src/interfaces/ISpotifyTrackObject';
+import {
+  ISpotifyPlaylist,
+  ISpotifyPlaylistTrackObject,
+  ISpotifyTrackObject,
+  ISpotifyReorderResponse
+} from '../../interfaces/index';
 import { globals } from 'src/environments/environment';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
-import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
 
 @Component({
   selector: 'app-spotify',

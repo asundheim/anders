@@ -1,7 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { IModule } from '../../interfaces/IModule';
-import { TreeComponent } from './tree/tree.component';
-import { DungeonBoxesComponent } from './dungeon-boxes/dungeon-boxes.component';
+import { IModule } from '../../interfaces/index';
+import { TreeComponent, DungeonBoxesComponent } from './index';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { globals } from '../../environments/environment';
 @Component({

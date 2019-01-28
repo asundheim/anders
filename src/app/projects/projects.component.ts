@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LabelColor } from '../../enums/label-colors';
-import { ILabel } from '../../interfaces/ILabel';
-import { IModule } from '../../interfaces/IModule';
 import { globals } from 'src/environments/environment';
+import { ILabel, IModule} from '../../interfaces/index';
 
 @Component({
   selector: 'app-projects',
@@ -12,26 +11,25 @@ import { globals } from 'src/environments/environment';
 export class ProjectsComponent implements OnInit {
   modules = [
     {
-      name: 'Dungeon Boxes',
+      name: 'Now Playing Bot',
+      image: 'assets/twitch.png',
       labels: [
         {
-          name: 'JS',
-          color: LabelColor.Orange
-        } as ILabel,
+          name: 'Typescript',
+          color: LabelColor.Green
+        },
         {
-          name: 'HTML',
+          name: 'React',
           color: LabelColor.Blue
         },
         {
-          name: 'CSS',
-          color: LabelColor.LightBlue
-        } as ILabel
-      ],
-      dungeonBoxes: true,
-      repoLink: 'https://github.com/AndersSundheim/DungeonBoxes',
-      interact: 'https://darthevandar.github.io/DungeonBoxes/',
-      description: 'Webapp displaying randomized dungeon layouts with customizable parameters. \nUses Delaunay Triangulation and minimum spanning trees to create the layouts. \nClick on the image to try it!'
-    } as IModule,
+          name: 'Electron',
+          color: LabelColor.Blue
+        }
+      ] as ILabel[],
+      repoLink: 'https://github.com/DarthEvandar/now-playing-bot',
+      description: 'Twitch bot integrated with spotify to display currently playing song in chat'
+    },
     {
       name: 'Spotify Randomizer',
       image: 'assets/spotify.png',
@@ -55,22 +53,43 @@ export class ProjectsComponent implements OnInit {
       description: 'Randomizes your spotify playlists using the Spotify Web API'
     } as IModule,
     {
+      name: 'Dungeon Boxes',
+      labels: [
+        {
+          name: 'JS',
+          color: LabelColor.Orange
+        },
+        {
+          name: 'HTML',
+          color: LabelColor.Blue
+        },
+        {
+          name: 'CSS',
+          color: LabelColor.LightBlue
+        }
+      ] as ILabel[],
+      dungeonBoxes: true,
+      repoLink: 'https://github.com/AndersSundheim/DungeonBoxes',
+      interact: 'https://darthevandar.github.io/DungeonBoxes/',
+      description: 'Webapp displaying randomized dungeon layouts with customizable parameters. \nUses Delaunay Triangulation and minimum spanning trees to create the layouts. \nClick on the image to try it!'
+    } as IModule,
+    {
       name: 'Lounge for CS:GO',
       image: 'assets/lounge_1.png',
       labels: [
         {
           name: 'Java',
           color: LabelColor.Orange
-        } as ILabel,
+        },
         {
           name: 'JS',
           color: LabelColor.Orange
-        } as ILabel,
+        },
         {
           name: 'Android',
           color: LabelColor.Green
-        } as ILabel
-      ],
+        }
+      ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/LoungeforCSGO',
       description: 'Android wrapper app for CSGOLounge with a custom UI and expanded features. \nDownloaded 20,000 times before it was deprecated.'
     } as IModule,
@@ -80,7 +99,7 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'JS',
           color: LabelColor.Orange
-        } as ILabel,
+        },
         {
           name: 'HTML',
           color: LabelColor.Blue
@@ -88,7 +107,7 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'CSS',
           color: LabelColor.LightBlue
-        } as ILabel
+        }
       ] as ILabel[],
       tree: true,
       repoLink: 'https://github.com/DarthEvandar/2dtree',
@@ -107,7 +126,7 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'JS',
           color: LabelColor.Orange
-        } as ILabel,
+        },
         {
           name: 'OpenGL',
           color: LabelColor.Blue
@@ -120,7 +139,7 @@ export class ProjectsComponent implements OnInit {
           name: 'Three.JS',
           color: LabelColor.Red
         }
-      ],
+      ] as ILabel[],
       repoLink: 'https://github.com/Darthevandar/place3D',
       interact: 'https://darthevandar.github.io/Place3D/',
       description: 'reddit.com/r/place in 3D using ThreeJS'
@@ -132,7 +151,7 @@ export class ProjectsComponent implements OnInit {
           name: 'Javascript',
           color: LabelColor.Orange
         }
-      ],
+      ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/PerlinCircles',
       interact: 'https://darthevandar.github.io/PerlinCircles/',
       description: 'Perlin noise visualized through circles.  \nMouse over to see it work!',
@@ -150,7 +169,7 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'Java',
           color: LabelColor.Orange
-        } as ILabel,
+        },
         {
           name: 'OpenGL',
           color: LabelColor.Blue
@@ -166,7 +185,7 @@ export class ProjectsComponent implements OnInit {
           name: 'Typescript',
           color: LabelColor.Green
         }
-      ],
+      ] as ILabel[],
       toggle: true,
       image: 'assets/constellations_1.png',
       repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations',
@@ -179,8 +198,8 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'Node.JS',
           color: LabelColor.Red
-        } as ILabel
-      ],
+        }
+      ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/go-switch',
       description: 'Uses the Philips Hue Go lamp and Node.JS to use the physical button on the Hue Go as a light switch.'
     } as IModule,
@@ -195,8 +214,8 @@ export class ProjectsComponent implements OnInit {
         {
           name: 'Lua',
           color: LabelColor.Blue
-        } as ILabel
-      ],
+        }
+      ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree',
       description: 'Minimum Spanning Tree implementation in Lua.'
     } as IModule

@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ISpotifyPlaylistCollection } from 'src/interfaces/ISpotifyPlaylistCollection';
+import {
+  ISpotifyPlaylistCollection,
+  ISpotifyPlaylistTrackObject,
+  ISpotifyPlaylist,
+  ISpotifyReorderResponse,
+  IAuthResponse,
+  ISpotifyCurrentlyPlaying,
+  IServerStatus
+} from 'src/interfaces/index';
 import { globals } from '../environments/environment';
-import { ISpotifyPlaylistTrackObject } from 'src/interfaces/ISpotifyPlaylistTrackObject';
 import { map } from 'rxjs/operators';
-import { ISpotifyPlaylist } from 'src/interfaces/ISpotifyPlaylist';
 import { Observable } from 'rxjs';
-import { ISpotifyReorderResponse } from 'src/interfaces/ISpotifyReorderResponse';
-import { IAuthResponse } from 'src/interfaces/IServerAuth';
-import { ISpotifyCurrentlyPlaying } from 'src/interfaces/ISpotifyCurrentlyPlaying';
-import { jsonpCallbackContext } from '@angular/common/http/src/module';
-import { IServerStatus } from 'src/interfaces/IServerStatus';
 
 @Injectable({
   providedIn: 'root'

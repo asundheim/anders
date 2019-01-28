@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ILabel } from '../../../interfaces/ILabel';
+import { ILabel } from '../../../interfaces/index';
 
 @Component({
   selector: 'app-label-container',
