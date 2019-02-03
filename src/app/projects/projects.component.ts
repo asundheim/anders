@@ -11,6 +11,23 @@ import { ILabel, IModule} from '../../interfaces/index';
 export class ProjectsComponent implements OnInit {
   modules = [
     {
+      name: 'UW Madison Course Notifier',
+      image: 'assets/badgers.png',
+      labels: [
+        {
+          name: 'React',
+          color: LabelColor.Blue
+        },
+        {
+          name: 'Node.JS',
+          color: LabelColor.Green
+        }
+      ] as ILabel[],
+      repoLink: 'https://github.com/DarthEvandar/uwmadison-class-openings',
+      description: 'Emails students at UW Madison when a class opens up for enrollment',
+      imageLink: 'https://anderssundheim.me/uwmadison-class-openings/'
+    } as IModule,
+    {
       name: 'Now Playing Bot',
       image: 'assets/twitch.png',
       labels: [
@@ -28,8 +45,9 @@ export class ProjectsComponent implements OnInit {
         }
       ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/now-playing-bot',
-      description: 'Twitch bot integrated with spotify to display currently playing song in chat'
-    },
+      description: 'Twitch bot integrated with spotify to display currently playing song in chat',
+      imageLink: 'https://github.com/DarthEvandar/now-playing-bot'
+    } as IModule,
     {
       name: 'Spotify Randomizer',
       image: 'assets/spotify.png',
