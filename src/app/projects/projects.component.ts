@@ -25,7 +25,7 @@ export class ProjectsComponent implements OnInit {
       ] as ILabel[],
       repoLink: 'https://github.com/DarthEvandar/uwmadison-class-openings',
       description: 'Emails students at UW Madison when a class opens up for enrollment',
-      imageLink: 'https://anderssundheim.me/uwmadison-class-openings/'
+      imageLink: 'http://anderssundheim.me/uwmadison-class-openings/'
     } as IModule,
     {
       name: 'Now Playing Bot',
