@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "updatebuild": "ng build --prod --base-href=\"/anders/\" && del docs && xcopy dist\\anders docs /s /e && copy docs\\index.html docs\\404.html"
+    "updatebuild": "ng build --prod --base-href=\"/anders/\" && del /s /q docs && xcopy dist\\anders docs /s /e /q && copy docs\\index.html docs\\404.html"
   },
   "private": true,
   "dependencies": {
