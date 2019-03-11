@@ -7,3 +7,4 @@ export * from './constellations/constellations.component';
 export * from './anders-container/index';
 export * from './anders-container/anders-container.component';
 export * from './about/about.component';
+export * from './doormantandc/doormantandc.component';

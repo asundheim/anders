@@ -16,7 +16,8 @@ import {
   PerlinComponent,
   SpotifyComponent,
   TreeeComponent,
-  LabelContainerComponent
+  LabelContainerComponent,
+  DoormantandcComponent
 } from './index';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -43,6 +44,10 @@ const appRoutes: Routes = [
   {
     path: 'ami',
     component: TreeeComponent
+  },
+  {
+    path: 'doorman/privacy',
+    component: DoormantandcComponent
   }
 ];
 @NgModule({
@@ -58,7 +63,8 @@ const appRoutes: Routes = [
     ProjectsComponent,
     PerlinComponent,
     SpotifyComponent,
-    TreeeComponent
+    TreeeComponent,
+    DoormantandcComponent
   ],
   imports: [
     BrowserModule,
