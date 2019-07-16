@@ -22,6 +22,7 @@ import {
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BathroomQueueComponent } from './bathroom-queue/bathroom-queue.component';
 
 const appRoutes: Routes = [
   {
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     PerlinComponent,
     SpotifyComponent,
     TreeeComponent,
-    DoormantandcComponent
+    DoormantandcComponent,
+    BathroomQueueComponent
   ],
   imports: [
     BrowserModule,
