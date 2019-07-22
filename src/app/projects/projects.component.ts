@@ -11,6 +11,27 @@ import { ILabel, IModule} from '../../interfaces/index';
 export class ProjectsComponent implements OnInit {
   modules = [
     {
+      name: 'Doorman',
+      image: 'assets/doorman.png',
+      labels: [
+        {
+          name: 'Flutter',
+          color: LabelColor.Teal
+        },
+        {
+          name: 'Node.JS',
+          color: LabelColor.DarkGreen
+        },
+        {
+          name: 'Firebase',
+          color: LabelColor.Red
+        }
+      ] as ILabel[],
+      repoLink: 'https://github.com/asundheim/doorman',
+      description: 'Cross-platform mobile app to manage entry into events through a QR code ticket system',
+      imageLink: 'https://play.google.com/store/apps/details?id=com.anderssundheim.doorman&hl=en_US'
+    } as IModule,
+    {
       name: 'UW Madison Course Notifier',
       image: 'assets/badgers.png',
       labels: [
@@ -20,10 +41,10 @@ export class ProjectsComponent implements OnInit {
         },
         {
           name: 'Node.JS',
-          color: LabelColor.Green
+          color: LabelColor.DarkGreen
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/uwmadison-class-openings',
+      repoLink: 'https://github.com/asundheim/uwmadison-class-openings',
       description: 'Emails students at UW Madison when a class opens up for enrollment',
       imageLink: 'http://anderssundheim.me/uwmadison-class-openings/'
     } as IModule,
@@ -44,28 +65,24 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Blue
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/now-playing-bot',
+      repoLink: 'https://github.com/asundheim/now-playing-bot',
       description: 'Twitch bot integrated with spotify to display currently playing song in chat',
-      imageLink: 'https://github.com/DarthEvandar/now-playing-bot'
+      imageLink: 'https://github.com/asundheim/now-playing-bot'
     } as IModule,
     {
       name: 'Spotify Randomizer',
       image: 'assets/spotify.png',
       labels: [
         {
-          name: 'TS',
+          name: 'Typescript',
           color: LabelColor.Green
         } as ILabel,
         {
-          name: 'HTML',
-          color: LabelColor.Blue
-        },
-        {
-          name: 'SASS',
-          color: LabelColor.LightBlue
-        } as ILabel
+          name: 'Angular',
+          color: LabelColor.Red
+        }
       ],
-      repoLink: 'https://github.com/DarthEvandar/anders/tree/master/src/app/spotify',
+      repoLink: 'https://github.com/asundheim/anders/tree/master/src/app/spotify',
       interact: 'https://anderssundheim.me/anders/spotify',
       imageLink: 'https://anderssundheim.me/anders/spotify',
       description: 'Randomizes your spotify playlists using the Spotify Web API'
@@ -87,8 +104,8 @@ export class ProjectsComponent implements OnInit {
         }
       ] as ILabel[],
       dungeonBoxes: true,
-      repoLink: 'https://github.com/AndersSundheim/DungeonBoxes',
-      interact: 'https://darthevandar.github.io/DungeonBoxes/',
+      repoLink: 'https://github.com/asundheim/DungeonBoxes',
+      interact: 'https://asundheim.github.io/DungeonBoxes/',
       description: 'Webapp displaying randomized dungeon layouts with customizable parameters. \nUses Delaunay Triangulation and minimum spanning trees to create the layouts. \nClick on the image to try it!'
     } as IModule,
     {
@@ -108,7 +125,7 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Green
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/LoungeforCSGO',
+      repoLink: 'https://github.com/asundheim/LoungeforCSGO',
       description: 'Android wrapper app for CSGOLounge with a custom UI and expanded features. \nDownloaded 20,000 times before it was deprecated.'
     } as IModule,
     {
@@ -128,8 +145,8 @@ export class ProjectsComponent implements OnInit {
         }
       ] as ILabel[],
       tree: true,
-      repoLink: 'https://github.com/DarthEvandar/2dtree',
-      interact: 'http://darthevandar.github.io/2dtree',
+      repoLink: 'https://github.com/asundheim/2dtree',
+      interact: 'http://asundheim.github.io/2dtree',
       description: '2d Binary Tree webapp with custom parameters.  \nClick on the image to try it!'
     } as IModule,
     {
@@ -158,8 +175,8 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Red
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/Darthevandar/place3D',
-      interact: 'https://darthevandar.github.io/Place3D/',
+      repoLink: 'https://github.com/asundheim/place3D',
+      interact: 'https://asundheim.github.io/Place3D/',
       description: 'reddit.com/r/place in 3D using ThreeJS'
     } as IModule,
     {
@@ -170,8 +187,8 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Orange
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/PerlinCircles',
-      interact: 'https://darthevandar.github.io/PerlinCircles/',
+      repoLink: 'https://github.com/asundheim/PerlinCircles',
+      interact: 'https://asundheim.github.io/PerlinCircles/',
       description: 'Perlin noise visualized through circles.  \nMouse over to see it work!',
       perlin: true
     } as IModule,
@@ -193,7 +210,7 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Blue
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/VectorTerrain',
+      repoLink: 'https://github.com/asundheim/VectorTerrain',
       description: 'Terrain generation using the diamond-square algorithm visualized in OpenGL and Java.'
     } as IModule,
     {
@@ -206,7 +223,7 @@ export class ProjectsComponent implements OnInit {
       ] as ILabel[],
       toggle: true,
       image: 'assets/constellations_1.png',
-      repoLink: 'https://github.com/DarthEvandar/Darthevandar.github.io/tree/master/src/app/constellations',
+      repoLink: 'https://github.com/asundheim/asundheim.github.io/tree/master/src/app/constellations',
       description: 'Click the toggle button and move your mouse around to see this work!'
     },
     {
@@ -218,7 +235,7 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Red
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/go-switch',
+      repoLink: 'https://github.com/asundheim/go-switch',
       description: 'Uses the Philips Hue Go lamp and Node.JS to use the physical button on the Hue Go as a light switch.'
     } as IModule,
     {
@@ -234,7 +251,7 @@ export class ProjectsComponent implements OnInit {
           color: LabelColor.Blue
         }
       ] as ILabel[],
-      repoLink: 'https://github.com/DarthEvandar/lua_minimum_spanning_tree',
+      repoLink: 'https://github.com/asundheim/lua_minimum_spanning_tree',
       description: 'Minimum Spanning Tree implementation in Lua.'
     } as IModule
   ] as IModule[];
