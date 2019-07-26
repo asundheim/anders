@@ -1,0 +1,21 @@
+<div style = "position: relative; padding-bottom: 100px">
+<section class="blogpost">
+  <div style = "font-size: 18px" >{{title}} </div>
+  <div style = "color: grey">{{date}}</div>
+  <p>
+    Every day on Bill Billiamson’s drive to work to everyday, he must make some pretty important decisions.  First, and most important, is the route he’s going to take.  Bill is pretty disorganized, so choosing the right route is essential to making it to work on time, and on top of that, he doesn’t particularly enjoy driving, so a shorter drive is a better drive as far as he’s concerned.  Another decision he must make is whether or not he should trust the route Google Maps gives him – “maybe everyone is going to take the freeway”, he thinks, deciding to take the slightly longer route with more stoplights but less chance of grinding to a dead halt because George didn’t have his coffee that morning and plowed into the median with his 50 foot big rig.
+  </p>
+  <p>
+  Bill has had a lot of time to think about the traffic problem, and luckily also happens to work at Google, so when he gets into work he goes straight to the Product Manager in charge of Google Maps and suggests that maybe they should consider calculating the route based on the number of other people calculating routes in the same direction so that the traffic can be dispersed evenly using Coding and Algorithms.   The PM calmly informs Bill that this would require everyone on to road use Google Maps to get accurate data, and that he should stop trying to come up with excuses for why he’s late to work.
+  </p>
+  <p>
+  But what if Google DID control 100% of the navigation app market?  Would they be able to direct traffic in the most optimal way possible, removing load from congested areas?  The answer is…maybe.  There’s a lot of confounding variables, but the potential is also there.  If some omniscient algorithm knew that 100 people wanted to get from point A to B and that freeway C was the fastest way to get between them, but that highway D was also a slightly slower option, it might decided that C couldn’t handle all 100 people without losing performance, and would route maybe 20% of people to D just to keep everyone arriving on time.  A perceptive reader might argue “not everybody uses GPS navigation, so you still don’t have all the data!”. Yes, this is true, but it reduces the set of data to just “GPS users” and “Non GPS users” instead of “Google Maps users”, “Waze Users”, “Apple Maps users” etc.  All you need to do then is to find the average density of “Non GPS users” for a given location and time, and bam, you’ve got an initial condition to work with, instead of a fluctuating data set as competing algorithms all try to figure out how to beat all of the others.  It wouldn’t even require much computation, as given a set of n possible routes R, with each route R_n having capacity R_ni, then for route R_x in R the percentage of traffic would be (R_i0 + R_i1 + … R_in) / R_xi – easy.  Google probably has some *pretty* smart people, so I’m sure they could figure out how to throw a machine learning algorithm at the ridiculous amount of data they possess to calculate the given capacity at any given time for a route.
+  </p>
+  <p>
+  This unfortunately doesn’t account for the problem of “too many drivers, not enough road” – sometimes there simply isn’t another way to go, and then drivers like Bill would have no other choice than to roll the dice every morning and evening, praying that George drank his coffee that morning.  This also doesn’t take into account that traffic engineers might have calibrated their stoplights with the assumption that X people would travel a certain direction, and that while Y people may be able to travel North/South, it might upset the Z people trying to make a left turn across the intersection only to find out that 2 people per light cycle are able to make it through.
+  </p>
+  <p>
+  After doing some research, I found out that 70% of navigation app users do in fact use Google Maps, and that 75% of the population uses navigation apps, so maybe Google already does something like this. Maybe traffic is just doomed to be awful until we all become tunnel people like Elon Musk wants.  Who knows?
+  </p>
+</section>
+</div>

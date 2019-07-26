@@ -10,10 +10,10 @@ import { globals } from 'src/environments/environment';
 
 export class AppComponent implements AfterViewInit {
 
-  @ViewChild('constellations') constellationsRef: ConstellationsComponent;
+  //@ViewChild('constellations') constellationsRef: ConstellationsComponent;
 
   ngAfterViewInit() {
-    this.constellationsRef.generatePoints();
+    //this.constellationsRef.generatePoints();
   }
 
   getHeader() {

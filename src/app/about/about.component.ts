@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    globals.header = 'About';
+    // globals.header = 'About';
   }
 
   goTo(location: string) {

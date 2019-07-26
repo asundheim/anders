@@ -213,19 +213,19 @@ export class ProjectsComponent implements OnInit {
       repoLink: 'https://github.com/asundheim/VectorTerrain',
       description: 'Terrain generation using the diamond-square algorithm visualized in OpenGL and Java.'
     } as IModule,
-    {
-      name: 'Constellations',
-      labels: [
-        {
-          name: 'Typescript',
-          color: LabelColor.Green
-        }
-      ] as ILabel[],
-      toggle: true,
-      image: 'assets/constellations_1.png',
-      repoLink: 'https://github.com/asundheim/asundheim.github.io/tree/master/src/app/constellations',
-      description: 'Click the toggle button and move your mouse around to see this work!'
-    },
+    // {
+    //   name: 'Constellations',
+    //   labels: [
+    //     {
+    //       name: 'Typescript',
+    //       color: LabelColor.Green
+    //     }
+    //   ] as ILabel[],
+    //   toggle: true,
+    //   image: 'assets/constellations_1.png',
+    //   repoLink: 'https://github.com/asundheim/asundheim.github.io/tree/master/src/app/constellations',
+    //   description: 'Click the toggle button and move your mouse around to see this work!'
+    // },
     {
       name: 'Hue Go Switch',
       image: 'assets/go_switch_1.png',

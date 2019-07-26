@@ -23,6 +23,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BathroomQueueComponent } from './bathroom-queue/bathroom-queue.component';
+import { BlogComponent } from './blog/blog.component';
+import { MapsPostComponent } from './blog/posts/maps-post/maps-post.component';
 
 const appRoutes: Routes = [
   {
@@ -49,6 +51,15 @@ const appRoutes: Routes = [
   {
     path: 'doorman/privacy',
     component: DoormantandcComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'blog/maps',
+    component: MapsPostComponent,
+    data: { }
   }
 ];
 @NgModule({
@@ -66,7 +77,9 @@ const appRoutes: Routes = [
     SpotifyComponent,
     TreeeComponent,
     DoormantandcComponent,
-    BathroomQueueComponent
+    BathroomQueueComponent,
+    BlogComponent,
+    MapsPostComponent
   ],
   imports: [
     BrowserModule,
