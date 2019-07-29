@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ModuleWithProviders } from '@angular/core';
 import { Observer, ReplaySubject, Observable } from 'rxjs';
 import { MathContent } from './math-content';
+import { MathModule } from './math.module';
 
 declare global {
   interface Window {
@@ -29,7 +30,6 @@ export class MathServiceImpl {
         element.innerHTML = math.mathml;
       }
     }
-
     MathJax.Hub.Queue(['Typeset', MathJax.Hub, element]);
   }
 }

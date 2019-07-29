@@ -19,7 +19,7 @@
     The PM calmly informs Bill that this would require everyone on to road use Google Maps to get accurate data, 
     and that he should stop trying to come up with excuses for why he’s late to work.
   </div>
-  <div [appMath] class = "paragraph">
+  <div class = "paragraph">
     But what if Google DID control 100% of the navigation app market?  
     Would they be able to direct traffic in the most optimal way possible, removing load from congested areas?  
     The answer is…maybe.  
@@ -32,24 +32,31 @@
     “Waze Users”, “Apple Maps users” etc.  
     All you need to do then is to find the average density of “Non GPS users” for a given location and time, and bam, you’ve got an initial condition to work with, 
     instead of a fluctuating data set as competing algorithms all try to figure out how to beat all of the others.  
-    It wouldn’t even require much computation, as given a set of $n$ possible routes $R$, with each route $R_n$ having capacity $R_{{'{'}}ni{{'}'}}$, 
-    then for route $x \in R$ the percentage of traffic would be $\frac{{'{'}}R_{{'{'}}xi{{'}'}}{{'}'}} 
-    {{'{'}}(R_{{'{'}}0i{{'}'}} + R_{{'{'}}1i{{'}'}} + \ldots + R_{{'{'}}ni{{'}'}}){{'}'}}$ – easy.  
+    It wouldn’t even require much computation, as given a set of <span [appMath]>$n$</span> possible routes <span [appMath]>$R$</span>, with each route <span [appMath]>$R_n$</span> having capacity <span [appMath]>$R_{{'{'}}ni{{'}'}}$</span>, 
+    then for route <span [appMath]>$x \in R$</span> the percentage of traffic would be <span [appMath]>$\frac{{'{'}}R_{{'{'}}xi{{'}'}}{{'}'}} 
+    {{'{'}}(R_{{'{'}}0i{{'}'}} + R_{{'{'}}1i{{'}'}} + \ldots + R_{{'{'}}ni{{'}'}}){{'}'}}$</span> – easy.  
     Google probably has some *pretty* smart people, so I’m sure they could figure out how to throw a machine learning algorithm at the ridiculous amount of data 
     they possess to calculate the given capacity at any given time for a route - maybe not so easy.
   </div>
   <div class = "paragraph">
     This unfortunately doesn’t account for the problem of “too many drivers, not enough road” – 
-    sometimes there simply isn’t another way to go, and then drivers like Bill would have no other choice than to roll the dice every morning and evening, 
+    sometimes there simply isn’t another way to go, and then drivers like Bill would have no other choice than to roll the dice every morning, 
     praying that George drank his coffee that morning.  
     This also doesn’t take into account that traffic engineers might have calibrated their stoplights with the assumption that X people would travel a 
     certain direction, and that while Y people may be able to travel North/South, it might upset the Z people trying to make a left turn across the 
     intersection only to find out that 2 people per light cycle are able to make it through.
   </div>
+  <div style="display:flex; justify-content: space-between;">
+    <img src="assets/blogAssets/maps/RoadBefore.png" width="40%">
+    <img src="assets/blogAssets/maps/RoadAfter.png" width="40%">
+  </div>
   <div class = "paragraph">
     After doing some research, I found out that <a href="https://themanifest.com/app-development/popularity-google-maps-trends-navigation-apps-2018"> 70% </a> of navigation app users do in fact use Google Maps, 
     and that <a href="https://themanifest.com/app-development/popularity-google-maps-trends-navigation-apps-2018">75%</a> of the population uses navigation apps, so perhaps Google already does something like this. 
     Maybe traffic is just doomed to be awful until we all become <a href="https://twitter.com/elonmusk/status/1075227467239940096?lang=en">tunnel people </a> like Elon Musk wants.  Who knows?
+  </div>
+  <div class ="paragraph">
+    <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
   </div>
 </section>
 </div>
