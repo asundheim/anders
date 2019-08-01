@@ -26,6 +26,8 @@ import { BathroomQueueComponent } from './bathroom-queue/bathroom-queue.componen
 import { BlogComponent } from './blog/blog.component';
 import { MapsPostComponent } from './blog/posts/maps-post/maps-post.component';
 import { MathModule } from './math/math.module';
+import { GistModule } from '@sgbj/angular-gist';
+import { Flutter1Component } from './blog/posts/flutterapp-post/flutter-1/flutter-1.component';
 const appRoutes: Routes = [
   {
     path: 'about',
@@ -58,8 +60,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'blog/maps',
-    component: MapsPostComponent,
-    data: { }
+    component: MapsPostComponent
+  },
+  {
+    path: 'blog/flutterapp1',
+    component: Flutter1Component
   }
 ];
 @NgModule({
@@ -79,7 +84,8 @@ const appRoutes: Routes = [
       DoormantandcComponent,
       BathroomQueueComponent,
       BlogComponent,
-      MapsPostComponent
+      MapsPostComponent,
+      Flutter1Component
    ],
    imports: [
       BrowserModule,
@@ -94,7 +100,8 @@ const appRoutes: Routes = [
       ToastModule,
       BrowserAnimationsModule,
       TooltipModule,
-      MathModule.forRoot()
+      MathModule.forRoot(),
+      GistModule
    ],
    providers: [
       MessageService

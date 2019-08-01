@@ -13,6 +13,10 @@ export class BlogComponent implements OnInit {
     {
       title: "How Google Maps could solve traffic",
       link: "maps"
+    },
+    {
+      title: 'Building a QR entry-ticket system using Flutter: Part 1',
+      link: 'flutterapp1'
     }
   ] as IBlogPost[]
   constructor(
