@@ -21,6 +21,14 @@
     font-family: 'Open Sans', Georgia, helvetica, arial, sans-serif;
     line-height: 1.8em;
 }
+.blogsingleimage {
+    display: flex;
+    justify-content: center;
+}
+.blogdualimage {
+    display:flex;
+    justify-content: space-between;
+}
 .blogtitle {
     font-size: 18px !important;
 }
