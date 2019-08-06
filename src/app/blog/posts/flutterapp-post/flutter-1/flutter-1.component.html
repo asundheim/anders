@@ -2,7 +2,6 @@
 <section class="blogpost">
   <div style = "font-size: 18px" >{{title}}</div>
   <div style = "color: grey">{{date}}</div>
-  <!-- <gh-gist src="https://gist.github.com/asundheim/b36c3d21997ac2725cd179e077e638dc.js"></gh-gist> -->
   <div style = "paragraph">
     In preparation for interviews, I decided to make a useful mobile app, an undertaking I had very little experience with outside of a half-baked
     Android app I had made years ago.  Since I am currently attending UW-Madison, the problem of managing just <strong> who </strong>
@@ -12,10 +11,10 @@
     media platforms, image sharing is exceedingly simple.  I also wanted a single "ticket" to be able to work for a set number of people,
     in case you wanted your attendees to be able to invite a certain number of people.I settled on QR codes as an effective way to contain data 
     combined with the speed and ease of scanning. Since I am a poor college student who can't afford a Mac, 
-    Google's new <a href="https://flutter.dev/"> Flutter framework </a> seemed like the best way to write a somewhat simple cross-platform app
+    Google's new <a href="https://flutter.dev/"> Flutter </a> framework seemed like the best way to write a somewhat simple cross-platform app
     on my Windows laptop. The schema of the project would then look something like this, with the database and API layers still to be determined.
   </div>
-  <div style="display:flex; justify-content:center">
+  <div style="display: flex; justify-content: center;">
     <img src = "assets/blogAssets/flutterapp/schema.png" width="90% ">
   </div>
   <div class="paragraph">
@@ -30,9 +29,12 @@
   <div class="paragraph">
     The next challenge would be to come up with an authorization scheme so that any old QR code couldn't be used,
     but that could be verified quickly without having to access the database and search through all issued codes(people tend not to like having to wait in line).
-    I will discuss my solution in a separate blog, but I decided on a self-validating scheme so that the API could analyze the composition
+    I will discuss my solution in a separate blog (Edit: <a href [routerLink] = "['/blog', 'authschema']"> here </a>), but I decided on a self-validating scheme so that the API could analyze the composition
     of the data and determine if it was correctly formatted before accessing the database - this way innacurate codes could be identified
     quickly and the issue delineated from scanning a code more times than is allowed.
+  </div>
+  <div class ="paragraph">
+    <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
   </div>
 </section>
 </div>

@@ -13,7 +13,7 @@ export class Flutter1Component implements OnInit {
 
   ngOnInit() {
     this.title = "Building a QR entry-ticket system using Flutter: Part 1";
-    this.date = "August 1st, 2019";
+    this.date = "August 1, 2019";
   }
 
 }
