@@ -1,4 +1,7 @@
 <div class = "postcontainer">
+  <h1 style="margin:auto;font-size: 18pt !important" class="postlist">
+    Posts
+  </h1>
   <div class = "postlist" *ngFor="let post of posts">
     <a [routerLink] = "['/blog', post.link]"> {{post.title}} </a>
   </div>

@@ -1,0 +1,40 @@
+<div style = "position: relative; padding-bottom: 100px">
+<section class="blogpost">
+  <div style = "font-size: 18px" >{{title}}</div>
+  <div style = "color: grey">{{date}}</div>
+  <div style = "paragraph">
+    In preparation for interviews, I decided to make a useful mobile app, an undertaking I had very little experience with outside of a half-baked
+    Android app I had made years ago.  Since I am currently attending UW-Madison, the problem of managing just <strong> who </strong>
+    is attending your party was fresh in my mind - you don't want to invite somebody and have them invite 5 people who then invite their friends, etc.
+    Since I didn't want every attendee of every party to need to install an app, I decided that the method of entry should be similar to a ticket,
+    where all you need is the image on your phone - this makes distribution easy, as in the age of Snapchat and various other social
+    media platforms, image sharing is exceedingly simple.  I also wanted a single "ticket" to be able to work for a set number of people,
+    in case you wanted your attendees to be able to invite a certain number of people.I settled on QR codes as an effective way to contain data 
+    combined with the speed and ease of scanning. Since I am a poor college student who can't afford a Mac, 
+    Google's new <a href="https://flutter.dev/"> Flutter </a> framework seemed like the best way to write a somewhat simple cross-platform app
+    on my Windows laptop. The schema of the project would then look something like this, with the database and API layers still to be determined.
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <img src = "assets/blogAssets/flutterapp/schema.png" width="90% ">
+  </div>
+  <div class="paragraph">
+    My only experience in writing APIs was in .NET, but I wanted something a bit more lightweight for this, so I decided
+    to use Node.JS for the task of writing the back-end API, with Express to handle the endpoints and routing (I picked Express
+    because it's what the Spotify API docs used for an example and I couldn't be bothered to research any other ones).  Since Google
+    offers Firebase for free, and I didn't want to pay for hosting for what was essentially a proof-of-concept,
+    I decided that Firebase would work just fine for the database portion (also I didn't want to have to hack SQL queries from JS
+    after coming off of a summer of the ease of C# and Entity Framework).  Luckily, Google offers an extensive API for Typescript, so
+    that wouldn't be an issue.
+  </div>
+  <div class="paragraph">
+    The next challenge would be to come up with an authorization scheme so that any old QR code couldn't be used,
+    but that could be verified quickly without having to access the database and search through all issued codes(people tend not to like having to wait in line).
+    I will discuss my solution in a separate blog (Edit: <a href [routerLink] = "['/blog', 'authschema']"> here </a>), but I decided on a self-validating scheme so that the API could analyze the composition
+    of the data and determine if it was correctly formatted before accessing the database - this way innacurate codes could be identified
+    quickly and the issue delineated from scanning a code more times than is allowed.
+  </div>
+  <div class ="paragraph">
+    <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
+  </div>
+</section>
+</div>

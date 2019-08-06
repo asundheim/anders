@@ -1,0 +1,54 @@
+<div style = "position: relative; padding-bottom: 100px">
+<section class="blogpost">
+  <div style = "font-size: 18px" >{{title}} </div>
+  <div style = "color: grey">{{date}}</div>
+  <div class = "paragraph">
+    Note: this is a post describing how I decided on the QR authorization code schema for
+    a Flutter app I wrote - if you're interested in the use case, see the post <a [routerLink] = "['/blog', 'flutterapp1']"> here </a>
+  </div>
+  <div class = "paragraph">
+    My goals for creating an authorization schema were as follows:
+    <ul>
+      <li> Fast </li>
+      <li> Self-validating </li>
+      <li> Able to store metadata </li>
+    </ul>
+    With this in mind, I did some research and discovered that QR codes were able to store
+    quite a bit of data (<a href="https://www.qrcode.com/en/about/standards.html">2,000 characters for a mid-size code</a>)
+    so all the information required for validation could be stored in the code itself - this would make it <b>fast</b>, as no
+    external data source would need to be queried to verify the composition of the code itself. After some deliberation with
+    a friend, I came up with a schema that would entail the uniqueness of codes:
+  </div>
+  <div style="display:flex; justify-content:center">
+    <img src = "assets/blogAssets/authschema/authschema.png" width="90%">
+  </div>
+  <div class = "paragraph">
+    By hashing the lexicographical sum of the characters in the event ID + the codes issued # (total codes issued for the event at the time of generation + 1),
+    no 2 codes for any given event could be identical, as the issued number guaranteed uniqueness, and the event id served as the salt
+    for the hash.  While this is not cryptographically very strong, for a frat party it is *good enough*, as even if you happened to be
+    code #10 for last weekend's party and this weekend's party, your hash would be significantly different. This makes it <b>self-validating</b>.
+    We can also then just append the rest of the information we want to the code, confusing possible attackers but making it easily parsed.
+    This makes it <b>able to store metadata</b>. 
+    The code to validate the composition of the QR code then looks something like this:
+  </div>
+  <div style="display:flex; justify-content:center">
+      <img src = "assets/blogAssets/authschema/verificationcode.png" width="100%">
+    </div>
+  <div class = "paragraph">
+    An observant reader might say
+    "That's pretty easy to figure out (especially now that you've told us), why not just scrape the event id from a friend's code,
+    pick a really high issued # that can't possibly conflict with the 100 or so people invited to the party, and generate codes at will."
+  </div>
+  <div class = "paragraph">
+    Well, there's
+    a log in the database that contains how many total codes have been issued, so when the db is finally queried to check if the code has been scanned,
+    we can check if issued > total issued - this makes it so you have to generate a code that will conflict with someone else, making it a possibility
+    that at the door your code will show up as already scanned if the legitimate recipient is already inside - shame on you.  IF you manage to get lucky,
+    and were smart enough to figure out the schema on an app intended to only see the light of day in front of an interview board, then maybe you deserve
+    to get in and let the unlucky person who's code you *stole* try to convince the door-person that they "are totally on the list bro".
+  </div>
+  <div class = "paragraph">
+    <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
+  </div>
+</section>
+</div>
