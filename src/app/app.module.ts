@@ -26,7 +26,6 @@ import { BathroomQueueComponent } from './bathroom-queue/bathroom-queue.componen
 import { BlogComponent } from './blog/blog.component';
 import { MapsPostComponent } from './blog/posts/maps-post/maps-post.component';
 import { MathModule } from './math/math.module';
-import { GistModule } from '@sgbj/angular-gist';
 import { Flutter1Component } from './blog/posts/flutterapp-post/flutter-1/flutter-1.component';
 import { AuthSchemaPostComponent } from './blog/posts/auth-schema-post/auth-schema-post.component';
 const appRoutes: Routes = [
@@ -106,8 +105,7 @@ const appRoutes: Routes = [
       ToastModule,
       BrowserAnimationsModule,
       TooltipModule,
-      MathModule.forRoot(),
-      GistModule
+      MathModule.forRoot()
    ],
    providers: [
       MessageService

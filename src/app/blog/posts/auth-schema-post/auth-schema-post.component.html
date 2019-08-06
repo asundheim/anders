@@ -20,7 +20,7 @@
     a friend, I came up with a schema that would entail the uniqueness of codes:
   </div>
   <div style="display:flex; justify-content:center">
-    <img src = "assets/blogAssets/authschema/authschema.png" width="90% ">
+    <img src = "assets/blogAssets/authschema/authschema.png" width="90%">
   </div>
   <div class = "paragraph">
     By hashing the lexicographical sum of the characters in the event ID + the codes issued # (total codes issued for the event at the time of generation + 1),
@@ -31,7 +31,9 @@
     This makes it <b>able to store metadata</b>. 
     The code to validate the composition of the QR code then looks something like this:
   </div>
-  <gh-gist src="https://gist.github.com/asundheim/9a0ad69571e59bcbff5a79b5d76848cd.js"></gh-gist>
+  <div style="display:flex; justify-content:center">
+      <img src = "assets/blogAssets/authschema/verificationcode.png" width="100%">
+    </div>
   <div class = "paragraph">
     An observant reader might say
     "That's pretty easy to figure out (especially now that you've told us), why not just scrape the event id from a friend's code,
