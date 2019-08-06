@@ -22,12 +22,12 @@ export class BlogComponent implements OnInit {
       title: 'Creating an authorization schema that\'s *good enough*',
       link: 'authschema'
     }
-  ] as IBlogPost[]
+  ] as IBlogPost[];
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 }

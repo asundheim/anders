@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-flutter-1',
-  templateUrl: './flutter-1.component.html',
-  styleUrls: ['./flutter-1.component.scss']
+  templateUrl: './flutter-1.component.html'
 })
 export class Flutter1Component implements OnInit {
   title: string;
