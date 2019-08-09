@@ -21,6 +21,10 @@ export class BlogComponent implements OnInit {
     {
       title: 'Creating an authorization schema that\'s *good enough*',
       link: 'authschema'
+    },
+    {
+      title: 'Conditional Access Policies via ARM Template for Azure Keyvault',
+      link: 'keyvaultaccess'
     }
   ] as IBlogPost[];
 

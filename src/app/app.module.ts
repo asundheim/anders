@@ -28,6 +28,8 @@ import { MapsPostComponent } from './blog/posts/maps-post/maps-post.component';
 import { MathModule } from './math/math.module';
 import { Flutter1Component } from './blog/posts/flutterapp-post/flutter-1/flutter-1.component';
 import { AuthSchemaPostComponent } from './blog/posts/auth-schema-post/auth-schema-post.component';
+import { KeyvaultAccessPostComponent } from './blog/posts/keyvault-access-post/keyvault-access-post.component';
+import { ScriptHackComponent } from './scripthack/scripthack.component';
 const appRoutes: Routes = [
   {
     path: 'about',
@@ -69,6 +71,10 @@ const appRoutes: Routes = [
   {
     path: 'blog/authschema',
     component: AuthSchemaPostComponent
+  },
+  {
+    path: 'blog/keyvaultaccess',
+    component: KeyvaultAccessPostComponent
   }
 ];
 @NgModule({
@@ -90,7 +96,9 @@ const appRoutes: Routes = [
       BlogComponent,
       MapsPostComponent,
       Flutter1Component,
-      AuthSchemaPostComponent
+      AuthSchemaPostComponent,
+      KeyvaultAccessPostComponent,
+      ScriptHackComponent
    ],
    imports: [
       BrowserModule,

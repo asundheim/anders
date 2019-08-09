@@ -1,0 +1,75 @@
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json.min.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json5.min.js"></script-hack>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.min.css"/>
+<div style = "position: relative; padding-bottom: 100px">
+  <section class="blogpost">
+    <div style = "font-size: 18px" >{{title}} </div>
+    <div style = "color: grey">{{date}}</div>
+    <div class = "paragraph">
+      Recently, when configuring a KeyVault resource in Azure, I needed to add access for a resource only in a specific environment -
+      I tried using the <code class="language-javascript">json()</code> function to add in a block, but escaping out all the
+      various single- and double-quotes was clunky and didn't really work, so I realized the best way to do it would be to 
+      store the <code class="language-json5">"accessPolicies": [ ]</code> array in the parameters file - it can be injected extremely easily
+      into the resource definition, as seen below in the partial definition:
+<pre><code class="language-json5">{{'{'}}
+  "parameters": {{'{'}}
+    "keyVaultAccess": {{'{'}}
+      "type": "array",
+      "metadata": {{'{'}}
+        "description": "Keyvault access policies"
+      {{'}'}}
+    {{'}'}}
+  {{'}'}},
+  "resources": [
+    {{'{'}}
+      "name": "...",
+      "type": "Microsoft.KeyVault/vaults",
+      "properties": {{'{'}}
+        "tenantId": "...",
+        "accessPolicies": "[parameters('keyVaultAccess')]",
+      {{'}'}}
+    {{'}'}}
+  ]
+{{'}'}}
+</code></pre>
+    The parameters file for each environment would then contain a <code class="language-json5">"keyVaultAccess":</code> entry like this:
+<pre><code class="language-json5">{{'{'}}
+  "$schema": "...",
+  "contentVersion": "1.0.0.0",
+  "parameters": {{'{'}}
+    "keyVaultAccess": {{'{'}}
+      "value": [
+        // Access Policy for X
+        {{'{'}}
+          "tenantId": "...",
+          "objectId": "...",
+          "permissions": {{'{'}}
+              "keys": [ ],
+              "secrets": [ ],
+              "certificates": [ ]
+          {{'}'}}
+        {{'}'}},
+        // Access Policy for Y
+        {{'{'}}
+          "tenantId": "...",
+          "objectId": "...",
+          "permissions": {{'{'}}
+              "keys": [ ],
+              "secrets": [ ],
+              "certificates": [ ]
+          {{'}'}}
+        {{'}'}}
+      ]
+    {{'}'}}
+  {{'}'}}
+{{'}'}}</code></pre>
+    </div>
+    <div class = "paragraph">
+      Then, for each different parameters file, you can have a specific group of access policies.
+    </div>
+    <div class = "paragraph">
+      <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
+    </div>
+  </section>
+</div>
