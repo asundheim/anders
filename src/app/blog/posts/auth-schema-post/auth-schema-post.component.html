@@ -1,3 +1,10 @@
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-clike.min.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-javascript.min.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-javadoclike.min.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-jsdoc.min.js"></script-hack>
+<script-hack src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-typescript.min.js"></script-hack>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.min.css"/>
 <div style = "position: relative; padding-bottom: 100px">
 <section class="blogpost">
   <div style = "font-size: 18px" >{{title}} </div>
@@ -30,10 +37,15 @@
     We can also then just append the rest of the information we want to the code, confusing possible attackers but making it easily parsed.
     This makes it <b>able to store metadata</b>. 
     The code to validate the composition of the QR code then looks something like this:
+<pre><code class="language-javascript">/**
+* @param {{'{'}}data{{'}'}} formatted string into object by helper method
+**/</code><code class="language-typescript">
+export let qrValidate = (data: IQRData): boolean => {{'{'}}
+    return sha256(
+      (sumEventId(data.eventID) + data.issuedNumber).toString()
+    ) === data.hash;
+{{'}'}};</code></pre>
   </div>
-  <div class="blogsingleimage">
-      <img src = "assets/blogAssets/authschema/verificationcode.png" width="100%">
-    </div>
   <div class = "paragraph">
     An observant reader might say
     "That's pretty easy to figure out (especially now that you've told us), why not just scrape the event id from a friend's code,
