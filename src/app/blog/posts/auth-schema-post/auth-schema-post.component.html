@@ -38,8 +38,8 @@
     This makes it <b>able to store metadata</b>. 
     The code to validate the composition of the QR code then looks something like this:
 <pre><code class="language-javascript">/**
-* @param {{'{'}}data{{'}'}} formatted string into object by helper method
-**/</code><code class="language-typescript">
+ * @param {{'{'}}data{{'}'}} formatted string into object by helper method
+**/</code><code class="language-typescript" style="">
 export let qrValidate = (data: IQRData): boolean => {{'{'}}
     return sha256(
       (sumEventId(data.eventID) + data.issuedNumber).toString()

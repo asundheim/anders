@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 .ui-card, .ui-galleria {
     margin-left: auto;
     margin-right: auto;
@@ -35,6 +36,10 @@
 .paragraph {
     margin-top: 12.5px;
     margin-bottom: 12.5px;
+}
+code {
+    font-size: .9em !important; 
+    font-family: 'Fira Code', monospace !important;
 }
 tr {
     background-color: unset!important;
