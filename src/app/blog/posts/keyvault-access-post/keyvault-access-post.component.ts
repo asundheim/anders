@@ -1,28 +1,19 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { HighlightService } from '../../services/highlight.service';
+import { BlogPostComponent } from '../../blogpost.component';
 
 @Component({
   selector: 'app-keyvault-access-post',
   templateUrl: './keyvault-access-post.component.html'
 })
-export class KeyvaultAccessPostComponent implements OnInit, AfterViewChecked {
+export class KeyvaultAccessPostComponent extends BlogPostComponent implements OnInit {
 
-  title: string;
-  date: string;
-  highlighted: boolean = false;
-
-  constructor(private highlightService: HighlightService) { }
+  constructor(public highlightService: HighlightService) {
+    super(highlightService);
+  }
 
   ngOnInit() {
     this.title = "Conditional Access Policies via ARM Template for Azure Keyvault";
     this.date = "August 9, 2019";
   }
-  
-  ngAfterViewChecked() {
-    if (!this.highlighted) {
-      this.highlightService.highlightAll();
-      this.highlighted = true;
-    }
-  }
-
 }

@@ -1,27 +1,19 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { HighlightService } from '../../services/highlight.service';
+import { BlogPostComponent } from '../../blogpost.component';
 
 @Component({
   selector: 'app-auth-schema-post',
   templateUrl: './auth-schema-post.component.html'
 })
-export class AuthSchemaPostComponent implements OnInit, AfterViewChecked {
+export class AuthSchemaPostComponent extends BlogPostComponent implements OnInit {
 
-  title: string;
-  date: string;
-  highlighted: boolean = false;
-
-  constructor(private highlightService: HighlightService) { }
+  constructor(public highlightService: HighlightService) { 
+    super(highlightService);
+  }
 
   ngOnInit() {
     this.title = "Creating an Authorization Schema that's *good enough*";
     this.date = "August 6, 2019";
-  }
-
-  ngAfterViewChecked() {
-    if (!this.highlighted) {
-      this.highlightService.highlightAll();
-      this.highlighted = true;
-    }
   }
 }
