@@ -25,11 +25,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BathroomQueueComponent } from './bathroom-queue/bathroom-queue.component';
 import { BlogComponent } from './blog/blog.component';
 import { MapsPostComponent } from './blog/posts/maps-post/maps-post.component';
-import { MathModule } from './math/math.module';
+import { MathModule } from './blog/services/math/math.module';
 import { Flutter1Component } from './blog/posts/flutterapp-post/flutter-1/flutter-1.component';
 import { AuthSchemaPostComponent } from './blog/posts/auth-schema-post/auth-schema-post.component';
 import { KeyvaultAccessPostComponent } from './blog/posts/keyvault-access-post/keyvault-access-post.component';
 import { ScriptHackComponent } from './scripthack/scripthack.component';
+import { HighlightService } from './blog/services/highlight.service';
 const appRoutes: Routes = [
   {
     path: 'about',
@@ -116,7 +117,8 @@ const appRoutes: Routes = [
       MathModule.forRoot()
    ],
    providers: [
-      MessageService
+      MessageService,
+      HighlightService
    ],
    bootstrap: [
       AppComponent
