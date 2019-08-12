@@ -31,6 +31,7 @@ import { AuthSchemaPostComponent } from './blog/posts/auth-schema-post/auth-sche
 import { KeyvaultAccessPostComponent } from './blog/posts/keyvault-access-post/keyvault-access-post.component';
 import { ScriptHackComponent } from './scripthack/scripthack.component';
 import { HighlightService } from './blog/services/highlight.service';
+import { BlogPostComponent } from './blog/blogpost.component';
 const appRoutes: Routes = [
   {
     path: 'about',
@@ -99,7 +100,8 @@ const appRoutes: Routes = [
       Flutter1Component,
       AuthSchemaPostComponent,
       KeyvaultAccessPostComponent,
-      ScriptHackComponent
+      ScriptHackComponent,
+      BlogPostComponent
    ],
    imports: [
       BrowserModule,
