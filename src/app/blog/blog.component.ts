@@ -25,6 +25,10 @@ export class BlogComponent implements OnInit {
     {
       title: 'Conditional Access Policies via ARM Template for Azure Keyvault',
       link: 'keyvaultaccess'
+    },
+    {
+      title: 'How to Design a URL Shortener',
+      link: 'urlshortener'
     }
   ] as IBlogPost[];
 

@@ -32,6 +32,8 @@ import { KeyvaultAccessPostComponent } from './blog/posts/keyvault-access-post/k
 import { ScriptHackComponent } from './scripthack/scripthack.component';
 import { HighlightService } from './blog/services/highlight.service';
 import { BlogPostComponent } from './blog/blogpost.component';
+import { UrlShortenerPostComponent } from './blog/posts/url-shortener-post/url-shortener-post.component';
+
 const appRoutes: Routes = [
   {
     path: 'about',
@@ -77,6 +79,10 @@ const appRoutes: Routes = [
   {
     path: 'blog/keyvaultaccess',
     component: KeyvaultAccessPostComponent
+  },
+  {
+    path: 'blog/urlshortener',
+    component: UrlShortenerPostComponent
   }
 ];
 @NgModule({
@@ -101,7 +107,8 @@ const appRoutes: Routes = [
       AuthSchemaPostComponent,
       KeyvaultAccessPostComponent,
       ScriptHackComponent,
-      BlogPostComponent
+      BlogPostComponent,
+      UrlShortenerPostComponent
    ],
    imports: [
       BrowserModule,

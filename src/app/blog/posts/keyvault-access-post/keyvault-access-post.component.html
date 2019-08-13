@@ -6,12 +6,12 @@
       Recently, when configuring a KeyVault resource in Azure, I needed to add access for a resource only in a specific environment -
       I tried using the <code class="language-javascript">json()</code> function to add in a block, but escaping out all the
       various single- and double-quotes was clunky and didn't really work, so I realized the best way to do it would be to 
-      store the <code class="language-json5">"accessPolicies": [ ]</code> array in the parameters file - it can be injected using 
+      store the <code class="language-json">"accessPolicies": [ ]</code> array in the parameters file - it can be injected using 
       <code class="language-clike">copy</code>
       into the resource definition
       (for some reason it complains if you use the parameter as the value for <code class="language-clike">accessPolicies</code>), 
       as seen below in the partial definition:
-<pre><code class="language-json5">{{'{'}}
+<pre><code class="language-json">{{'{'}}
   "parameters": {{'{'}}
     "keyVaultAccess": {{'{'}}
       "type": "array",
@@ -38,8 +38,8 @@
   ]
 {{'}'}}
 </code></pre>
-    The parameters file for each environment would then contain a <code class="language-json5">"keyVaultAccess":</code> entry like this:
-<pre><code class="language-json5">{{'{'}}
+    The parameters file for each environment would then contain a <code class="language-json">"keyVaultAccess":</code> entry like this:
+<pre><code class="language-json">{{'{'}}
   "$schema": "...",
   "contentVersion": "1.0.0.0",
   "parameters": {{'{'}}
