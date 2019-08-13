@@ -1,8 +1,12 @@
+<div style = "position: relative; padding-bottom: 100px">
 <div class = "postcontainer">
-  <h1 style="margin:auto;font-size: 18pt !important" class="postlist">
+  <div class="postheader">
     Posts
-  </h1>
-  <div class = "postlist" *ngFor="let post of posts">
-    <a [routerLink] = "['/blog', post.link]"> {{post.title}} </a>
   </div>
+  <ul>
+    <li *ngFor="let post of posts" style="margin: 10px;font-family: 'Open Sans', Georgia, helvetica, arial, sans-serif">
+      <a [routerLink] = "['/blog', post.link]"> {{post.title}} </a>
+    </li>
+  </ul>
+</div>
 </div>

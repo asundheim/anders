@@ -27,18 +27,27 @@
 .blogsingleimage {
     display: flex;
     justify-content: center;
+    > img {
+        width: 90%;
+    }
 }
 .blogdualimage {
     display:flex;
     justify-content: space-between;
+    > img {
+        width: 40%;
+    }
 }
 .blogtitle {
     font-size: 18px !important;
 }
-.paragraph {
-    margin-top: 12.5px;
-    margin-bottom: 12.5px;
+section {
+    > div:nth-of-type(n+3) {
+        margin-top: 12.5px;
+        margin-bottom: 12.5px;
+    }
 }
+
 code {
     font-size: .9em !important; 
     font-family: 'Fira Code', monospace !important;

@@ -1,3 +1,76 @@
-<p>
-  url-shortener-post works!
-</p>
+<div style = "position: relative; padding-bottom: 100px">
+  <section class="blogpost">
+    <div style = "font-size: 18px" >{{title}} </div>
+    <div style = "color: grey">{{date}}</div>
+    <div>
+      n.b. I (mostly) wrote this to serve as a pithy example when I inevitably get asked it
+      in an interview - there are probably more in-depth guides by smarter people elsewhere on
+      the internet.
+    </div>
+    <div>
+      For this post, any code I write will be in C# using the .NET Framework, but this should be easily translated
+      into whatever language you prefer.  There shouldn't be any framework boilerplate, as I'm just sketching
+      a solution out, not creating a fully-functional resource.
+    </div>
+    <div>
+      The first goal for our URL shortener is that it should be, well, like all the others.
+      We want our "shortened" URLs to be of the form
+    </div>
+    <div class = "blogsingleimage">
+      <img src="assets/blogAssets/urlshortener/urldiagram.png" style="width:60%">
+    </div>
+    <div>
+      If we choose from numbers and upper- and lower-case letters, we get <span [appMath]>$26 + 26 + 10 = 62$</span> characters
+      to work with, giving us <span [appMath]>$62^7 \approx 3.5 * 10^{{'{'}}12{{'}'}}$</span> possible urls before we run out -
+      about 3.5 trillion.  That's a lot of URLs. According to some quick <a href="https://www.internetlivestats.com/total-number-of-websites/">Googling</a>,
+      there are about 1.5 billion websites, with only 200 million or so active - we've got some space even if everyone decided to shorten their url 1000 times
+      (this would probably crash our server well beforehand).
+    </div>
+    <div>
+      With this in mind, now we can start generating these strings - for the sake of simplicity, I've decided that we should store
+      the shortened strings and URLs as key-value pairs in a SQL table, which can then be pulled into our API as a dictionary
+      for fast lookup.  We can cache this dictionary and update it every x minutes, to prevent having to query the database every
+      time we want to redirect a user.  The API code then looks something like this:
+<pre class="language-csharp"><code class="language-csharp">[HttpPost("generate")]
+public async Task{{'<'}}string{{'>'}} GenerateUrl([FromHeader] string url) {{'{'}}
+  var shortened = "";
+  // Generate short strings until a unique one is found
+  do {{'{'}}
+    shortened = GenerateShortString();
+  {{'}'}} while (
+    GetCache().ContainsKey(shortened) || 
+    GetTemporaryCache().ContainsKey(shortened));
+
+  AddToTemporaryCache(shortened, url);
+  return shortened;
+{{'}'}}</code></pre>
+    I'll explain the <code class="lang-cs">TemporaryCache</code> bit in the next section - it should improve our performance by a lot.
+    </div>
+    <div>
+      That takes care of generation, but what happens when a user goes to the new URL? We want to make the process
+      as seamless as possible, so we'll have our API send back a <code class = "lang-clike">302 Redirect</code> HTTP status code with the
+      full url, that way all the API needs to do is figure out what URL the user is looking for.  Luckily, because we're sooo smart,
+      all we need to do is write a little bit of code to handle the cache update and even less code for the redirect.
+      To update the cache, we want to write our new version of the cache to the database, but this could start taking a while
+      with a lot of records, so if we only write new records to a temporary cache (as shown above), we just write those extra few rows
+      to the db and pull down the updated table as our new cache. The controller code then is simply:
+<pre class="lang-cs"><code class="lang-cs">[HttpGet("{{'{'}}url{{'}'}}")]
+public async Task{{'<'}}ActionResult{{'>'}} RedirectUrl(string url) {{'{'}}
+  var redirect = "";
+  if (GetCache().TryGetValue(url, out redirect)) {{'{'}}
+    return Redirect(redirect);
+  {{'}'}}
+  return NotFound();
+{{'}'}}</code></pre>
+    </div>
+    <div>
+      <h3>Notes</h3>
+      There are some small optimizations you could make to this, like querying both the cache AND the temporary
+      cache to prevent time between shortening and using the url, creating some sort of hash scheme to
+      prevent brute-forcing a unique 7-character string, etc.
+    </div>
+    <div>
+      <a href="https://twitter.com/HereComesDaSund">Follow me on Twitter</a>
+    </div>
+  </section>
+</div>
