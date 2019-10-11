@@ -11,8 +11,8 @@ export class BlogComponent implements OnInit {
 
   posts = [
     {
-      title: "How Google Maps could solve traffic",
-      link: "maps"
+      title: 'How Google Maps could solve traffic',
+      link: 'maps'
     },
     {
       title: 'Building a QR entry-ticket system using Flutter: Part 1',

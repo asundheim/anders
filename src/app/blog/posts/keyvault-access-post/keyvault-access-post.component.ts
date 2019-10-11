@@ -13,7 +13,7 @@ export class KeyvaultAccessPostComponent extends BlogPostComponent implements On
   }
 
   ngOnInit() {
-    this.title = "Conditional Access Policies via ARM Template for Azure Keyvault";
-    this.date = "August 9, 2019";
+    this.title = 'Conditional Access Policies via ARM Template for Azure Keyvault';
+    this.date = 'August 9, 2019';
   }
 }

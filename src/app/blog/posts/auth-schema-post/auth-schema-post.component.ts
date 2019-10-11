@@ -8,12 +8,12 @@ import { BlogPostComponent } from '../../blogpost.component';
 })
 export class AuthSchemaPostComponent extends BlogPostComponent implements OnInit {
 
-  constructor(public highlightService: HighlightService) { 
+  constructor(public highlightService: HighlightService) {
     super(highlightService);
   }
 
   ngOnInit() {
-    this.title = "Creating an Authorization Schema that's *good enough*";
-    this.date = "August 6, 2019";
+    this.title = 'Creating an Authorization Schema that\'s *good enough*';
+    this.date = 'August 6, 2019';
   }
 }

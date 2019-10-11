@@ -11,7 +11,7 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class AppComponent implements AfterViewInit {
 
-  //@ViewChild('constellations') constellationsRef: ConstellationsComponent;
+  // @ViewChild('constellations') constellationsRef: ConstellationsComponent;
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -20,9 +20,9 @@ export class AppComponent implements AfterViewInit {
       }
     });
   }
-  
+
   ngAfterViewInit() {
-    //this.constellationsRef.generatePoints();
+    // this.constellationsRef.generatePoints();
   }
 
   getHeader() {

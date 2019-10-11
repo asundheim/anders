@@ -9,7 +9,7 @@ export class BlogPostComponent implements OnInit, AfterViewChecked {
 
   title: string;
   date: string;
-  highlighted: boolean = false;
+  highlighted = false;
 
   constructor(public highlightService?: HighlightService) { }
 

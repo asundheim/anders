@@ -1,10 +1,11 @@
-import { Component, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input, AfterViewInit } from '@angular/core';
 
 @Component({
+    // tslint:disable-next-line: component-selector
     selector: 'script-hack',
     templateUrl: './scripthack.component.html'
 })
-export class ScriptHackComponent {
+export class ScriptHackComponent implements AfterViewInit {
 
     @Input()
     src: string;
@@ -15,16 +16,16 @@ export class ScriptHackComponent {
     @ViewChild('script') script: ElementRef;
 
     convertToScript() {
-        var element = this.script.nativeElement;
-        var script = document.createElement("script");
-        script.type = this.type ? this.type : "text/javascript";
+        const element = this.script.nativeElement;
+        const script = document.createElement('script');
+        script.type = this.type ? this.type : 'text/javascript';
         if (this.src) {
             script.src = this.src;
         }
         if (element.innerHTML) {
             script.innerHTML = element.innerHTML;
         }
-        var parent = element.parentElement;
+        const parent = element.parentElement;
         parent.parentElement.replaceChild(script, parent);
     }
 
