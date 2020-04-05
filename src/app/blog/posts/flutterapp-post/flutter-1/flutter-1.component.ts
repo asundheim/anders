@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostComponent } from 'src/app/blog/blogpost.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-flutter-1',
@@ -7,7 +8,7 @@ import { BlogPostComponent } from 'src/app/blog/blogpost.component';
 })
 export class Flutter1Component extends BlogPostComponent implements OnInit {
 
-  constructor() { super(); }
+  constructor(public titleService: Title) { super(titleService); }
 
   ngOnInit() {
     this.title = 'Building a QR entry-ticket system using Flutter: Part 1';

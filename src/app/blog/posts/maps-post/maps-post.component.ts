@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostComponent } from '../../blogpost.component';
 import { HighlightService } from '../../services/highlight.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-maps-post',
@@ -8,7 +9,7 @@ import { HighlightService } from '../../services/highlight.service';
 })
 export class MapsPostComponent extends BlogPostComponent implements OnInit {
 
-  constructor() { super(); }
+  constructor(public titleService: Title) { super(titleService); }
 
   ngOnInit() {
     this.title = 'How Google Maps could solve traffic';

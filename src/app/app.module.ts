@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService, TooltipModule } from 'primeng/primeng';
@@ -127,7 +127,8 @@ const appRoutes: Routes = [
    ],
    providers: [
       MessageService,
-      HighlightService
+      HighlightService,
+      Title
    ],
    bootstrap: [
       AppComponent

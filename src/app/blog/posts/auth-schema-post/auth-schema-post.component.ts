@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { HighlightService } from '../../services/highlight.service';
 import { BlogPostComponent } from '../../blogpost.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-auth-schema-post',
@@ -8,8 +9,8 @@ import { BlogPostComponent } from '../../blogpost.component';
 })
 export class AuthSchemaPostComponent extends BlogPostComponent implements OnInit {
 
-  constructor(public highlightService: HighlightService) {
-    super(highlightService);
+  constructor(public titleService: Title, public highlightService: HighlightService) {
+    super(titleService, highlightService);
   }
 
   ngOnInit() {
