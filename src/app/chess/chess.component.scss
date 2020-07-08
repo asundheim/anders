@@ -15,3 +15,9 @@
     font-size: 24px;
     font-family: monospace;
 }
+
+@media all and (max-width: 1024px) {
+    .scorecontainer {
+        width: 95%;
+    }
+}
