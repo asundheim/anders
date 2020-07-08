@@ -9,6 +9,7 @@ export const environment = {
 export const globals = {
   constellationsEnabled: false,
   spotifyRedirect: 'http://localhost:4200/spotify',
+  lichessRedirect: 'http://localhost:4200/chess',
   header: 'Anders Sundheim',
   up: 'http://localhost:4200/ami'
 };

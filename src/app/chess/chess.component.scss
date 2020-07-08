@@ -1,0 +1,17 @@
+.scorecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 33%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.scorelist {
+    padding-left: 50px;
+    color:#333;
+    font-size: 24px;
+    font-family: monospace;
+}

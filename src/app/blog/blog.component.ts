@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IBlogPost } from 'src/interfaces/IBlogPost';
 import { Router, ActivatedRoute } from '@angular/router';
+import { globals } from 'src/environments/environment';
 
 @Component({
   selector: 'app-blog',
@@ -37,5 +38,7 @@ export class BlogComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    globals.header = 'Blog'
+  }
 }

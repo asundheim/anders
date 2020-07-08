@@ -33,6 +33,8 @@ import { ScriptHackComponent } from './scripthack/scripthack.component';
 import { HighlightService } from './blog/services/highlight.service';
 import { BlogPostComponent } from './blog/blogpost.component';
 import { UrlShortenerPostComponent } from './blog/posts/url-shortener-post/url-shortener-post.component';
+import { ChessComponent } from './chess/chess.component';
+import { ChessService } from './chess/chess.service';
 
 const appRoutes: Routes = [
   {
@@ -83,6 +85,10 @@ const appRoutes: Routes = [
   {
     path: 'blog/urlshortener',
     component: UrlShortenerPostComponent
+  },
+  {
+    path: 'chess',
+    component: ChessComponent
   }
 ];
 @NgModule({
@@ -108,7 +114,8 @@ const appRoutes: Routes = [
       KeyvaultAccessPostComponent,
       ScriptHackComponent,
       BlogPostComponent,
-      UrlShortenerPostComponent
+      UrlShortenerPostComponent,
+      ChessComponent
    ],
    imports: [
       BrowserModule,
