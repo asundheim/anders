@@ -1,9 +1,9 @@
 <div class="scorecontainer">
     <div *ngFor="let score of getScores(); index as i;" class="scorelist">
         {{i + 1}}. {{ score.username }}: {{ score.perfs.puzzle.rating }}
-        <span [ngStyle]="{'color': score.perfs.puzzle.prog > 0 ? 'green': 'red'}"
-        style="font-size: 18px;" >
-        ({{score.perfs.puzzle.prog > 0 ? '+': ''}}{{ score.perfs.puzzle.prog }})
-    </span>
+        <span [ngStyle]="{'color': score.perfs.puzzle.prog > 0 ? 'green': 'red'}" style="font-size: 18px;" >
+            ({{score.perfs.puzzle.prog > 0 ? '+': ''}}{{ score.perfs.puzzle.prog }})
+        </span>
+        <canvas height="30px" width="200px"></canvas>
     </div>
 </div>

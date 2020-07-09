@@ -1,17 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {
-  ISpotifyPlaylistCollection,
-  ISpotifyPlaylistTrackObject,
-  ISpotifyPlaylist,
-  ISpotifyReorderResponse,
-  IAuthResponse,
-  ISpotifyCurrentlyPlaying,
-  IServerStatus
-} from 'src/interfaces/index';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IChessProfile } from 'src/interfaces/IChessProfile';
+import { IChessHistory } from 'src/interfaces/IChessHistory';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +15,10 @@ export class ChessService {
 
   getUser(user: string): Observable<IChessProfile> {
     return this.http.get<IChessProfile>(`${this.baseURL}/api/user/${user}`);
+  }
+
+  getPuzzleHistory(user: string): Observable<IChessHistory[]> {
+    return this.http.get<IChessHistory[]>(`${this.baseURL}/api/user/${user}/rating-history`);
   }
 
 }
