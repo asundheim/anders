@@ -50,10 +50,7 @@ export class ChessComponent implements OnInit {
         });
     }
 
-    getScores() {
-      return this.scores.sort((a,b)=>b.perfs.puzzle.rating - a.perfs.puzzle.rating);
-    }
+    getScores = () => this.scores.sort((a,b)=>b.perfs.puzzle.rating - a.perfs.puzzle.rating);
 
     extractPuzzleScores = (h: IChessHistory[]): number[] => h.filter(i => i.name === "Puzzles")[0].points.map(q => q[3]).slice(-10,-1);
-    
 }
