@@ -10,14 +10,15 @@
 }
 
 .scorelist {
-    padding-left: 50px;
+    padding-left: 10px;
     color:#333;
-    font-size: 24px;
+    font-size: 20px;
     font-family: monospace;
+    line-height: 1.8em;
 }
 
 @media all and (max-width: 1024px) {
     .scorecontainer {
-        width: 96%;
+        width: 100%;
     }
 }
