@@ -1,8 +1,9 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService, TooltipModule } from 'primeng/primeng';
+import { CardModule, ToggleButtonModule, LightboxModule, ButtonModule, MessageService, TooltipModule, CheckboxModule } from 'primeng/primeng';
 import { GalleriaModule } from 'primeng/galleria';
+import {InputTextModule} from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import {
   AppComponent,
@@ -35,6 +36,8 @@ import { BlogPostComponent } from './blog/blogpost.component';
 import { UrlShortenerPostComponent } from './blog/posts/url-shortener-post/url-shortener-post.component';
 import { ChessComponent } from './chess/chess.component';
 import { ChessService } from './chess/chess.service';
+import { GrocerySplitComponent } from './grocerysplit/grocerysplit.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -89,6 +92,10 @@ const appRoutes: Routes = [
   {
     path: 'chess',
     component: ChessComponent
+  },
+  {
+    path: 'grocerysplit',
+    component: GrocerySplitComponent
   }
 ];
 @NgModule({
@@ -115,7 +122,8 @@ const appRoutes: Routes = [
       ScriptHackComponent,
       BlogPostComponent,
       UrlShortenerPostComponent,
-      ChessComponent
+      ChessComponent,
+      GrocerySplitComponent
    ],
    imports: [
       BrowserModule,
@@ -130,7 +138,10 @@ const appRoutes: Routes = [
       ToastModule,
       BrowserAnimationsModule,
       TooltipModule,
-      MathModule.forRoot()
+      MathModule.forRoot(),
+      InputTextModule,
+      FormsModule,
+      CheckboxModule
    ],
    providers: [
       MessageService,

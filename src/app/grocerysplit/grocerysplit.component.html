@@ -1,0 +1,36 @@
+<div style = "position: relative; padding-bottom: 125px;">
+    <div class="blogpost">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fas fa-align-left"></i></span>
+            <input type="text" pInputText placeholder="Item Name (optional)" [(ngModel)]="name">
+        </div>
+        <br>
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">$</span>
+            <input type="text" pInputText placeholder="Price" [(ngModel)]="price">
+        </div>
+        <br>
+        <div class="ui-inputgroup">
+            <p-checkbox name="payfor" value="lena" [(ngModel)]="paidfor" label="Lena"></p-checkbox>
+            <p-checkbox name="payfor" value="anders" [(ngModel)]="paidfor" label="Anders"></p-checkbox>
+            <p-checkbox name="payfor" value="nick" [(ngModel)]="paidfor" label="Nick"></p-checkbox>
+            <p-checkbox name="payfor" value="gwen" [(ngModel)]="paidfor" label="Gwen"></p-checkbox>
+        </div>        
+        <br>
+        <div class="ui-inputgroup">
+            <p-button label="Add" (onClick)="add($event)"></p-button>
+        </div>
+
+        <div *ngFor="let item of items">
+            <strong>{{ item.name }}:</strong> {{ item.paidfor }}
+        </div>
+        <hr>
+        Anders: ${{ anderstotal }}
+        <br>
+        Lena: ${{ lenatotal }}
+        <br>
+        Nick: ${{ nicktotal }}
+        <br>
+        Gwen: ${{ gwentotal }}
+    </div>
+</div>
