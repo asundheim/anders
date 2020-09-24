@@ -34,6 +34,11 @@ export class GrocerySplitComponent implements OnInit {
   }
 
   total() {
+    this.anderstotal = 0;
+    this.lenatotal = 0;
+    this.nicktotal = 0;
+    this.gwentotal = 0;
+    
     this.items.forEach((item) => {
       let splitcost = item.price / item.paidfor.length;
       if (item.paidfor.includes("lena")) {
